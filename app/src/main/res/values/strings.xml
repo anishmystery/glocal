@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Glocal</string>
+    <string name="title">glocal</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="createAccount">Don\'t have an account? Sign up now!</string>
+    <string name="sellerName">Name</string>
+    <string name="sellerEmail">Email</string>
+    <string name="sellerPhone">Phone</string>
+    <string name="otp">OTP</string>
+    <string name="signup">Signup</string>
+    <string name="sendOTP">Send OTP</string>
+    <string name="resendOTP">Didn\'t receive the code? Resend OTP</string>
+    <string name="verify">Verify OTP</string>
+    <string name="sellerHeading">Seller Onboarding</string>
+    <string name="promoteHeading">Promote your business</string>
+    <string name="buyerHeading">Buyer Onboarding</string>
+    <string name="discoverHeading">Discover Shops</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="sellerDescription">Register your shop and become a seller, showcasing a variety of products for users to buy</string>
+</resources>

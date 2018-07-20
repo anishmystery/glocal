@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".OTPAuth">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/great_vibes"
+        android:text="@string/title"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorAccent"
+        android:shadowColor="@color/colorPrimary"
+        android:elevation="20dp"
+        android:textSize="70sp"
+        />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="50dp"
+        android:inputType="phone"
+        android:fontFamily="@font/quicksand"
+        android:hint="@string/sellerPhone"/>
+
+    <Button
+        android:id="@+id/sendOTP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_style"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/sendOTP"
+        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:elevation="50dp"
+        android:shadowColor="@color/editText"/>
+
+</RelativeLayout>

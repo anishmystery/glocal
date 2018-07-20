@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".Signup">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/great_vibes"
+        android:text="@string/title"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorAccent"
+        android:shadowColor="@color/colorPrimary"
+        android:elevation="20dp"
+        android:textSize="70sp"
+        />
+
+    <EditText
+        android:id="@+id/sellerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="50dp"
+        android:inputType="phone"
+        android:fontFamily="@font/quicksand"
+        android:hint="@string/sellerName"/>
+
+    <EditText
+        android:id="@+id/sellerPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sellerName"
+        android:layout_marginTop="20dp"
+        android:inputType="phone"
+        android:fontFamily="@font/quicksand"
+        android:hint="@string/sellerPhone" />
+
+    <EditText
+        android:id="@+id/sellerEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sellerPhone"
+        android:layout_marginTop="20dp"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/quicksand"
+        android:hint="@string/sellerEmail" />
+
+    <EditText
+        android:id="@+id/sellerPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sellerEmail"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        android:fontFamily="@font/quicksand"
+        android:hint="@string/password" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sellerPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_style"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/signup"
+        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:elevation="50dp"
+        android:shadowColor="@color/editText"/>
+
+</RelativeLayout>
