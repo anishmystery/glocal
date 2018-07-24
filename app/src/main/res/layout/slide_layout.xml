@@ -40,7 +40,6 @@
         android:textColor="#FFF"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:text="@string/sellerDescription"
         />
 
 </RelativeLayout>

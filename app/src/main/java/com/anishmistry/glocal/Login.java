@@ -17,22 +17,22 @@ import android.widget.TextView;
 public class Login extends AppCompatActivity {
 
     Button signin;
-    EditText user, pwd;
+    EditText user;
     TextView signup, head;
     Boolean onboard;
+    String spanString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
             onboard = extras.getBoolean("onboard");
         if(onboard==null)
             startActivity(new Intent(getApplicationContext(), OnBoarding.class));
-        else
-            setContentView(R.layout.activity_login);
 
         signup = (TextView)findViewById(R.id.createAccount);
-        SpannableString span = new SpannableString(signup.getText().toString());
+        SpannableString span = new SpannableString("Don\\'t have an account? Sign up now!");
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View view) {
