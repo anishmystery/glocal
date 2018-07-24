@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
-
     Button signin;
     EditText user, pwd;
     TextView signup, head;
