@@ -6,6 +6,8 @@
         <item name="colorPrimary">#262938</item>
         <item name="colorPrimaryDark">#181A24</item>
         <item name="colorAccent">#FF4081</item>
+        <item name="fontFamily">@font/quicksand</item>
+
     </style>
 
 </resources>

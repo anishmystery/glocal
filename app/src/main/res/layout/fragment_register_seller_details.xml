@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterSellerDetails">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="@string/sellerDetails"
+            android:textSize="18sp"
+            android:layout_below="@+id/title"/>
+
+        <EditText
+            android:id="@+id/sellerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtitle"
+            android:layout_marginTop="30dp"
+            android:inputType="textPersonName"
+            android:fontFamily="@font/quicksand"
+            android:hint="@string/sellerName"/>
+
+        <EditText
+            android:id="@+id/sellerPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sellerName"
+            android:layout_marginTop="20dp"
+            android:inputType="phone"
+            android:fontFamily="@font/quicksand"
+            android:hint="@string/sellerPhone" />
+
+        <EditText
+            android:id="@+id/sellerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sellerPhone"
+            android:layout_marginTop="20dp"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/quicksand"
+            android:hint="@string/sellerEmail" />
+
+    </RelativeLayout>
+
+</FrameLayout>

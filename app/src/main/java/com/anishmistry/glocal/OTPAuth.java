@@ -47,8 +47,8 @@ public class OTPAuth extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        contactNumber = extras.getString("phone");
-        editTextMobile.setText(contactNumber);
+//        contactNumber = extras.getString("phone");
+//        editTextMobile.setText(contactNumber);
 
         buttonSendOTP.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -29,23 +29,13 @@
         android:layout_marginTop="50dp"
         android:inputType="text"
         android:fontFamily="@font/quicksand"
-        android:hint="@string/username"/>
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/username"
-        android:layout_marginTop="50dp"
-        android:inputType="textPassword"
-        android:fontFamily="@font/quicksand"
-        android:hint="@string/password" />
+        android:hint="@string/sellerPhone"/>
 
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/username"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_style"
