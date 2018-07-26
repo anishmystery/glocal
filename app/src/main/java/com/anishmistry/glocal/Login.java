@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
                 ds.setColor(Color.BLUE);
             }
         };
-        span.setSpan(clickableSpan, 23,35, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(clickableSpan, 23,36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         signup.setText(span);
         signup.setMovementMethod(LinkMovementMethod.getInstance());
     }

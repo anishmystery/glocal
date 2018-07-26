@@ -13,6 +13,9 @@
     <string name="shopName">Shop Name</string>
     <string name="shopLocation">Shop Location</string>
     <string name="bidPrice">Bid Price</string>
+    <string name="bidPriceInfo">*Bid Price is the amount paid by the seller for each time your shop is visited in the app.
+        Higher bid price makes your shop more likely to be discovered.</string>
+    <string name="categoryDetails">Category Details</string>
     <string name="homeDelivery">Home Delivery: </string>
     <string name="yes">Yes</string>
     <string name="no">No</string>

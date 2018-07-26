@@ -7,21 +7,24 @@
     android:padding="20dp"
     tools:context=".Signup">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/slideViewPager"
+    <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="525dp"
-        android:layout_alignParentTop="true"/>
-
-    <LinearLayout
-        android:id="@+id/dotsLayout"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/great_vibes"
+        android:text="@string/title"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
-
-    </LinearLayout>
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorAccent"
+        android:shadowColor="@color/colorPrimary"
+        android:textSize="70sp"/>
+    
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_below="@+id/title"
+        android:layout_above="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <Button
         android:id="@+id/back"
@@ -46,16 +49,12 @@
         android:text="@string/next"
         style="@style/Widget.AppCompat.Button.Borderless"/>
 
-    <Button
-        android:id="@+id/finish"
+    <LinearLayout
+        android:id="@+id/dotsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/finish"
-        android:visibility="invisible"
-        style="@style/Widget.AppCompat.Button.Borderless"/>
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"/>
 
 </RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterShopDetails">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="@string/shopDetails"
+            android:textSize="18sp"
+            android:layout_below="@+id/title"/>
+
+        <EditText
+            android:id="@+id/shopName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtitle"
+            android:layout_marginTop="30dp"
+            android:inputType="text"
+            android:fontFamily="@font/quicksand"
+            android:hint="@string/shopName"/>
+
+        <EditText
+            android:id="@+id/shopLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopName"
+            android:layout_marginTop="20dp"
+            android:inputType="text"
+            android:fontFamily="@font/quicksand"
+            android:hint="@string/shopLocation" />
+
+        <EditText
+            android:id="@+id/bidPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopLocation"
+            android:layout_marginTop="20dp"
+            android:inputType="number"
+            android:fontFamily="@font/quicksand"
+            android:hint="@string/bidPrice" />
+
+        <TextView
+            android:id="@+id/bidPriceInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/bidPriceInfo"
+            android:textSize="16sp"
+            android:layout_below="@+id/bidPrice"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".Signup" />
         <activity android:name=".OTPAuth" />
-        <activity android:name=".OnBoarding"></activity>
+        <activity android:name=".OnBoarding" />
     </application>
 
 </manifest>
