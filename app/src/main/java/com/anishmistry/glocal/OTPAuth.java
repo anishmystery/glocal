@@ -1,14 +1,23 @@
 package com.anishmistry.glocal;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alimuzaffar.lib.pin.PinEntryEditText;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -25,7 +34,9 @@ import java.util.concurrent.TimeUnit;
 public class OTPAuth extends AppCompatActivity {
 
     private EditText editTextMobile, editTextOTP;
-    private Button buttonSendOTP;
+    private TextView resendOTP;
+    private Button buttonSendOTP, buttonVerifyOTP;
+    private PinEntryEditText enterOTP;
 
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -44,6 +55,26 @@ public class OTPAuth extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         editTextMobile = findViewById(R.id.phone);
         buttonSendOTP = findViewById(R.id.sendOTP);
+        resendOTP = findViewById(R.id.resendOTP);
+        buttonVerifyOTP = findViewById(R.id.verifyOTP);
+        enterOTP = findViewById(R.id.inputOTP);
+
+        SpannableString span = new SpannableString("Didn't receive the code? Resend OTP.");
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(View view) {
+                resendVerificationCode(editTextMobile.getText().toString(), mResendToken);
+            }
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(false);
+                ds.setColor(Color.BLUE);
+            }
+        };
+        span.setSpan(clickableSpan, 25,36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        resendOTP.setText(span);
+        resendOTP.setMovementMethod(LinkMovementMethod.getInstance());
 
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -53,6 +84,16 @@ public class OTPAuth extends AppCompatActivity {
         buttonSendOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonSendOTP.setVisibility(View.INVISIBLE);
+                buttonSendOTP.setEnabled(false);
+                buttonVerifyOTP.setEnabled(true);
+                buttonVerifyOTP.setVisibility(View.VISIBLE);
+                editTextMobile.setVisibility(View.INVISIBLE);
+                editTextMobile.setEnabled(false);
+                resendOTP.setVisibility(View.VISIBLE);
+                resendOTP.setEnabled(true);
+                enterOTP.setVisibility(View.VISIBLE);
+                enterOTP.setEnabled(true);
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(editTextMobile.getText().toString().trim(),
                         60,
                         TimeUnit.SECONDS,
@@ -79,6 +120,25 @@ public class OTPAuth extends AppCompatActivity {
                 mResendToken = token;
             }
         };
+
+        buttonVerifyOTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(enterOTP != null) {
+                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(mVerificationId, enterOTP.getText().toString());
+                    signInWithPhoneAuthCredential(phoneAuthCredential);
+                }
+            }
+        });
+    }
+
+    private void resendVerificationCode(String phoneNumber, PhoneAuthProvider.ForceResendingToken token) {
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(editTextMobile.getText().toString().trim(),
+                60,
+                TimeUnit.SECONDS,
+                OTPAuth.this,
+                mCallbacks,
+                token);
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
@@ -90,6 +150,7 @@ public class OTPAuth extends AppCompatActivity {
                 }
 
                 else {
+                    Toast.makeText(OTPAuth.this, "Invalid OTP Entered", Toast.LENGTH_SHORT).show();
                     if(task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
 
                     }

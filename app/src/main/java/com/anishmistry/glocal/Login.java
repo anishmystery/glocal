@@ -15,10 +15,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
-    Button signin;
-    EditText user;
-    TextView signup, head;
-    Boolean onboard;
+    Button buttonLogin;
+    EditText editTextPhone;
+    TextView textViewSignup;
+    Boolean fromOnboarding;
     String spanString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +26,28 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Bundle extras = getIntent().getExtras();
         if(extras!=null)
-            onboard = extras.getBoolean("onboard");
-        if(onboard==null)
+            fromOnboarding = extras.getBoolean("fromOnboarding");
+        if(fromOnboarding ==null)
             startActivity(new Intent(getApplicationContext(), OnBoarding.class));
 
-        signup = (TextView)findViewById(R.id.createAccount);
-        SpannableString span = new SpannableString("Don\\'t have an account? Sign up now!");
+        editTextPhone = findViewById(R.id.username);
+        buttonLogin = findViewById(R.id.login);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(editTextPhone != null) {
+                    if(editTextPhone.length()!=10) {
+                        editTextPhone.setError("Invalid phone number");
+                    }
+                }
+                else {
+                    editTextPhone.setError("Phone number required");
+                }
+            }
+        });
+
+        textViewSignup = (TextView)findViewById(R.id.createAccount);
+        SpannableString span = new SpannableString("Don't have an account? Sign up now!");
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View view) {
@@ -44,8 +60,8 @@ public class Login extends AppCompatActivity {
                 ds.setColor(Color.BLUE);
             }
         };
-        span.setSpan(clickableSpan, 23,36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        signup.setText(span);
-        signup.setMovementMethod(LinkMovementMethod.getInstance());
+        span.setSpan(clickableSpan, 23,35, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textViewSignup.setText(span);
+        textViewSignup.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }

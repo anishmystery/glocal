@@ -16,7 +16,7 @@ public class OnBoarding extends AppCompatActivity {
     private LinearLayout dotsLayout;
     private SliderAdapter sliderAdapter;
     private TextView[] dots;
-    private Button nextBtn, backBtn, finishBtn;
+    private Button buttonNext, buttonBack, buttonFinish;
     private int currentPage;
 
     @Override
@@ -24,35 +24,35 @@ public class OnBoarding extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_boarding);
 
-        backBtn = (Button)findViewById(R.id.back);
-        nextBtn = (Button)findViewById(R.id.next);
-        finishBtn = (Button)findViewById(R.id.finish);
+        buttonBack = (Button)findViewById(R.id.back);
+        buttonNext = (Button)findViewById(R.id.next);
+        buttonFinish = (Button)findViewById(R.id.finish);
         slideViewPager = (ViewPager)findViewById(R.id.slideViewPager);
         dotsLayout = (LinearLayout)findViewById(R.id.dotsLayout);
         sliderAdapter = new SliderAdapter(this);
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndicator(0);
         slideViewPager.addOnPageChangeListener(viewListener);
-        nextBtn.setOnClickListener(new View.OnClickListener() {
+        buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 slideViewPager.setCurrentItem(currentPage + 1);
             }
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 slideViewPager.setCurrentItem(currentPage - 1);
             }
         });
 
-        finishBtn.setOnClickListener(new View.OnClickListener() {
+        buttonFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
                 Intent i = new Intent(getApplicationContext(), Login.class);
-                i.putExtra("onboard", true);
+                i.putExtra("fromOnboarding", true);
                 startActivity(i);
 
             }
@@ -88,30 +88,30 @@ public class OnBoarding extends AppCompatActivity {
             currentPage = i;
 
             if(i==0) {
-                nextBtn.setEnabled(true);
-                nextBtn.setVisibility(View.VISIBLE);
-                finishBtn.setEnabled(false);
-                finishBtn.setVisibility(View.INVISIBLE);
-                backBtn.setEnabled(false);
-                backBtn.setVisibility(View.INVISIBLE);
+                buttonNext.setEnabled(true);
+                buttonNext.setVisibility(View.VISIBLE);
+                buttonFinish.setEnabled(false);
+                buttonFinish.setVisibility(View.INVISIBLE);
+                buttonBack.setEnabled(false);
+                buttonBack.setVisibility(View.INVISIBLE);
             }
 
             else if(i == dots.length -1 ) {
-                nextBtn.setEnabled(false);
-                nextBtn.setVisibility(View.INVISIBLE);
-                finishBtn.setEnabled(true);
-                finishBtn.setVisibility(View.VISIBLE);
-                backBtn.setEnabled(true);
-                backBtn.setVisibility(View.VISIBLE);
+                buttonNext.setEnabled(false);
+                buttonNext.setVisibility(View.INVISIBLE);
+                buttonFinish.setEnabled(true);
+                buttonFinish.setVisibility(View.VISIBLE);
+                buttonBack.setEnabled(true);
+                buttonBack.setVisibility(View.VISIBLE);
             }
 
             else {
-                nextBtn.setEnabled(true);
-                nextBtn.setVisibility(View.VISIBLE);
-                finishBtn.setEnabled(false);
-                finishBtn.setVisibility(View.INVISIBLE);
-                backBtn.setEnabled(true);
-                backBtn.setVisibility(View.VISIBLE);
+                buttonNext.setEnabled(true);
+                buttonNext.setVisibility(View.VISIBLE);
+                buttonFinish.setEnabled(false);
+                buttonFinish.setVisibility(View.INVISIBLE);
+                buttonBack.setEnabled(true);
+                buttonBack.setVisibility(View.VISIBLE);
             }
         }
 

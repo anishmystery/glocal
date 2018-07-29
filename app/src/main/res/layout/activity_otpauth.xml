@@ -46,4 +46,56 @@
         android:elevation="50dp"
         android:shadowColor="@color/editText"/>
 
+    <com.alimuzaffar.lib.pin.PinEntryEditText
+        android:id="@+id/inputOTP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:maxLength="6"
+        android:textSize="18sp"
+        app:pinAnimationType="popIn"
+        android:visibility="invisible"/>
+
+    <!--<EditText-->
+        <!--android:id="@+id/otp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/sendOTP"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:inputType="phone"-->
+        <!--android:fontFamily="@font/quicksand"-->
+        <!--android:hint="@string/sellerPhone"/>-->
+
+    <Button
+        android:id="@+id/verifyOTP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputOTP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_style"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/verify"
+        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:elevation="50dp"
+        android:visibility="invisible"
+        android:shadowColor="@color/editText"/>
+
+    <TextView
+        android:id="@+id/resendOTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verifyOTP"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/resendOTP"
+        android:visibility="invisible"/>
+
 </RelativeLayout>

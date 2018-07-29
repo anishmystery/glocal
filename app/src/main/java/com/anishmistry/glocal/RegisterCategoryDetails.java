@@ -4,16 +4,18 @@ package com.anishmistry.glocal;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import java.util.List;
 
@@ -24,7 +26,11 @@ import java.util.List;
 public class RegisterCategoryDetails extends Fragment implements MultiSelectSpinner.OnMultipleItemsSelectedListener {
 
     View view;
-    Button signupBtn;
+    Bundle bundle;
+    EditText editTextShopName, editTextShopLocation, editTextBidPrice;
+    TextView textViewDots1, textViewDots2, textViewDots3;
+    private Button buttonBack;
+    Button buttonSignup;
     RadioGroup radioExtraOptions;
     TextView extraOptions;
     public RegisterCategoryDetails() {
@@ -46,8 +52,26 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
 
         extraOptions = (TextView)view.findViewById(R.id.homeDelivery);
         radioExtraOptions = (RadioGroup)view.findViewById(R.id.radioHomeDelivery);
-        signupBtn = (Button)view.findViewById(R.id.signup);
-        signupBtn.setOnClickListener(new View.OnClickListener() {
+        buttonBack = view.findViewById(R.id.back);
+        textViewDots1 = view.findViewById(R.id.dots1);
+        textViewDots2 = view.findViewById(R.id.dots2);
+        textViewDots3 = view.findViewById(R.id.dots3);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new RegisterShopDetails();
+                fragment.setArguments(bundle);
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.container, fragment);
+                fragmentTransaction.commit();
+                textViewDots2.setTextColor(getResources().getColor(R.color.colorAccent));
+            }
+        });
+
+        buttonSignup = (Button)view.findViewById(R.id.signup);
+        buttonSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), OTPAuth.class);
@@ -78,5 +102,4 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
             radioExtraOptions.setVisibility(View.VISIBLE);
         }
     }
-
 }
