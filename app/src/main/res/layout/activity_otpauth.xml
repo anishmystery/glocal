@@ -7,19 +7,26 @@
     android:padding="20dp"
     tools:context=".OTPAuth">
 
-    <TextView
+    <!--<TextView-->
+        <!--android:id="@+id/title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:fontFamily="@font/great_vibes"-->
+        <!--android:text="@string/title"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:textColor="@color/colorAccent"-->
+        <!--android:shadowColor="@color/colorPrimary"-->
+        <!--android:elevation="20dp"-->
+        <!--android:textSize="70sp"-->
+        <!--/>-->
+
+    <ImageView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/great_vibes"
-        android:text="@string/title"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
-        android:shadowColor="@color/colorPrimary"
-        android:elevation="20dp"
-        android:textSize="70sp"
-        />
+        android:layout_height="100dp"
+        android:src="@drawable/glocal_logo"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/phone"

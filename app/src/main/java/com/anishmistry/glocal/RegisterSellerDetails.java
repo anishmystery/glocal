@@ -1,11 +1,9 @@
 package com.anishmistry.glocal;
 
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.text.Html;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -13,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -43,6 +40,7 @@ public class RegisterSellerDetails extends Fragment {
         buttonNext = view.findViewById(R.id.next);
         editTextSellerName = view.findViewById(R.id.sellerName);
         editTextSellerPhone = view.findViewById(R.id.sellerPhone);
+        editTextSellerPhone.setText("+91");
         editTextSellerEmail = view.findViewById(R.id.sellerEmail);
         textViewDots1 = view.findViewById(R.id.dots1);
         textViewDots2 = view.findViewById(R.id.dots2);
@@ -51,49 +49,40 @@ public class RegisterSellerDetails extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if(TextUtils.isEmpty(editTextSellerName.getText().toString())) {
-                    editTextSellerName.setError("Seller name required");
-                }
-
-                else if(TextUtils.isEmpty(editTextSellerPhone.getText().toString())) {
-                    editTextSellerPhone.setError("Seller phone number required");
-                }
-
-                else if(TextUtils.isEmpty(editTextSellerEmail.getText().toString())) {
-                    editTextSellerEmail.setError("Seller email required");
-                }
-
-                else {
-                    validPhone = Patterns.PHONE.matcher(editTextSellerPhone.getText().toString().trim()).matches();
-                    validEmail = Patterns.EMAIL_ADDRESS.matcher(editTextSellerEmail.getText().toString().trim()).matches();
-                    if(validPhone == false) {
-                        editTextSellerPhone.setError("Invalid phone number");
-                    }
-
-                    else if(validEmail == false) {
-                        editTextSellerEmail.setError("Invalid email");
-                    }
-
-                    else {
+//                if (TextUtils.isEmpty(editTextSellerName.getText().toString())) {
+//                    editTextSellerName.setError("Seller name required");
+//                } else if (TextUtils.isEmpty(editTextSellerPhone.getText().toString())) {
+//                    editTextSellerPhone.setError("Seller phone number required");
+//                } else if (TextUtils.isEmpty(editTextSellerEmail.getText().toString())) {
+//                    editTextSellerEmail.setError("Seller email required");
+//                } else {
+//                    validPhone = Patterns.PHONE.matcher(editTextSellerPhone.getText().toString().trim()).matches();
+//                    validEmail = Patterns.EMAIL_ADDRESS.matcher(editTextSellerEmail.getText().toString().trim()).matches();
+//                    if (validPhone == false) {
+//                        editTextSellerPhone.setError("Invalid phone number");
+//                    } else if (validEmail == false) {
+//                        editTextSellerEmail.setError("Invalid email");
+//                    } else {
                         name = editTextSellerName.getText().toString().trim();
                         phone = editTextSellerPhone.getText().toString().trim();
                         email = editTextSellerEmail.getText().toString().trim();
+                        bundle = new Bundle();
+                        bundle.putString("sellerName", name);
+                        bundle.putString("sellerPhone", phone);
+                        bundle.putString("sellerEmail", email);
 
-                        Fragment fragment = new RegisterShopDetails();
+                        Fragment fragment;
+                        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                        fragment = new RegisterShopDetails();
                         fragment.setArguments(bundle);
-                        FragmentManager fm = getFragmentManager();
-                        FragmentTransaction fragmentTransaction = fm.beginTransaction();
                         fragmentTransaction.replace(R.id.container, fragment);
+                        fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         textViewDots2.setTextColor(getResources().getColor(R.color.colorAccent));
-
-//                        bundle.putString("sellerName", name);
-//                        bundle.putString("sellerPhone", phone);
-//                        bundle.putString("sellerEmail", email);
-                    }
+                    //}
                 }
 
-            }
+            //}
         });
 
         return view;

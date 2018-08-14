@@ -7,17 +7,24 @@
     android:padding="20dp"
     tools:context=".Signup">
 
-    <TextView
+    <!--<TextView-->
+        <!--android:id="@+id/title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:fontFamily="@font/great_vibes"-->
+        <!--android:text="@string/title"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:textColor="@color/colorAccent"-->
+        <!--android:shadowColor="@color/colorPrimary"-->
+        <!--android:textSize="70sp"/>-->
+
+    <ImageView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/great_vibes"
-        android:text="@string/title"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
-        android:shadowColor="@color/colorPrimary"
-        android:textSize="70sp"/>
+        android:layout_height="100dp"
+        android:src="@drawable/glocal_logo"
+        android:layout_centerHorizontal="true"/>
     
     <FrameLayout
         android:id="@+id/container"

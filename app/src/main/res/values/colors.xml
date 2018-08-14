@@ -6,4 +6,5 @@
     <color name="editText">#E1E2E1</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorTransparentWhite">#CCCCCC</color>
+    <color name="colorDialog">#880E4F</color>
 </resources>

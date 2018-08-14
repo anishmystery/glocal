@@ -1,14 +1,9 @@
 package com.anishmistry.glocal;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.TextUtils;
-import android.util.Patterns;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -16,20 +11,27 @@ import android.widget.TextView;
 
 public class Signup extends AppCompatActivity {
 
-    private LinearLayout dotsLayout;
-    private TextView[] dots;
-    private Button buttonNext, buttonBack;
-    private int counter = 0;
-    private boolean validPhone, validEmail;
-    private String name, phone, email;
-    private EditText editTextSellerName, editTextSellerPhone, editTextSellerEmail;
     Bundle bundle;
+//    private LinearLayout dotsLayout;
+//    private TextView[] dots;
+//    private Button buttonNext, buttonBack;
+//    private int counter = 0;
+//    private boolean validPhone, validEmail;
+//    private String name, phone, email;
+//    private EditText editTextSellerName, editTextSellerPhone, editTextSellerEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         bundle = new Bundle();
+        Fragment fragment;
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragment = new RegisterSellerDetails();
+        fragmentTransaction.replace(R.id.container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+//        editTextSellerPhone = (EditText)findViewById(R.id.sellerPhone);
 //        buttonBack = (Button)findViewById(R.id.back);
 //        buttonNext = (Button)findViewById(R.id.next);
 //        dotsLayout = (LinearLayout)findViewById(R.id.dotsLayout);
@@ -140,12 +142,7 @@ public class Signup extends AppCompatActivity {
 //            buttonBack.setVisibility(View.INVISIBLE);
 //            buttonNext.setEnabled(true);
 //            buttonNext.setVisibility(View.VISIBLE);
-            Fragment fragment = new RegisterSellerDetails();
-            FragmentManager fm = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fm.beginTransaction();
-            fragmentTransaction.replace(R.id.container, fragment);
-            fragmentTransaction.commit();
-////            editTextSellerPhone.setText("+91");
+//        editTextSellerPhone.setText("+91");
 //        }
     }
 //

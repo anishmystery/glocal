@@ -133,6 +133,17 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/errorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signup"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:fontFamily="@font/quicksand"
+            android:text="" />
+
     </RelativeLayout>
 
 </FrameLayout>

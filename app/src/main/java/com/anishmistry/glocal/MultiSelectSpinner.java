@@ -3,9 +3,9 @@ package com.anishmistry.glocal;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v7.widget.AppCompatSpinner;
 import android.util.AttributeSet;
 import android.widget.ArrayAdapter;
-import android.support.v7.widget.AppCompatSpinner;
 import android.widget.SpinnerAdapter;
 
 import java.util.Arrays;
@@ -13,20 +13,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MultiSelectSpinner extends AppCompatSpinner implements DialogInterface.OnMultiChoiceClickListener {
-    public interface OnMultipleItemsSelectedListener{
-        void selectedIndices(List<Integer> indices);
-        void selectedStrings(List<String> strings);
-    }
-    private OnMultipleItemsSelectedListener listener;
-
     String[] items = null;
     boolean[] mSelection = null;
     boolean[] mSelectionAtStart = null;
     String itemsAtStart = null;
     Context c;
     ArrayAdapter<String> simpleAdapter;
+    private OnMultipleItemsSelectedListener listener;
     private boolean hasNone = false;
-
     public MultiSelectSpinner(Context context) {
         super(context);
         c = context;
@@ -43,13 +37,13 @@ public class MultiSelectSpinner extends AppCompatSpinner implements DialogInterf
         super.setAdapter(simpleAdapter);
     }
 
-    public void setListener(OnMultipleItemsSelectedListener listener){
+    public void setListener(OnMultipleItemsSelectedListener listener) {
         this.listener = listener;
     }
 
     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
         if (mSelection != null && which < mSelection.length) {
-            if(hasNone) {
+            if (hasNone) {
                 if (which == 0 && isChecked && mSelection.length > 1) {
                     for (int i = 1; i < mSelection.length; i++) {
                         mSelection[i] = false;
@@ -121,7 +115,7 @@ public class MultiSelectSpinner extends AppCompatSpinner implements DialogInterf
     public void setItems(List<String> items) {
         this.items = items.toArray(new String[items.size()]);
         mSelection = new boolean[this.items.length];
-        mSelectionAtStart  = new boolean[this.items.length];
+        mSelectionAtStart = new boolean[this.items.length];
         simpleAdapter.clear();
         simpleAdapter.add(this.items[0]);
         Arrays.fill(mSelection, false);
@@ -161,7 +155,6 @@ public class MultiSelectSpinner extends AppCompatSpinner implements DialogInterf
         simpleAdapter.clear();
         simpleAdapter.add(buildSelectedItemString());
     }
-
 
     public void setSelection(int index) {
         for (int i = 0; i < mSelection.length; i++) {
@@ -250,8 +243,14 @@ public class MultiSelectSpinner extends AppCompatSpinner implements DialogInterf
         return sb.toString();
     }
 
-    public void hasNoneOption(boolean val){
+    public void hasNoneOption(boolean val) {
         hasNone = val;
+    }
+
+    public interface OnMultipleItemsSelectedListener {
+        void selectedIndices(List<Integer> indices);
+
+        void selectedStrings(List<String> strings);
     }
 }
 

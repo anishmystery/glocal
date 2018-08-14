@@ -1,10 +1,11 @@
 package com.anishmistry.glocal;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -19,6 +20,8 @@ import android.widget.Toast;
 
 import com.alimuzaffar.lib.pin.PinEntryEditText;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -29,6 +32,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class OTPAuth extends AppCompatActivity {
@@ -45,19 +50,23 @@ public class OTPAuth extends AppCompatActivity {
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
 
-    private String contactNumber;
+    private String seller_phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otpauth);
 
-        Bundle extras = getIntent().getExtras();
         editTextMobile = findViewById(R.id.phone);
         buttonSendOTP = findViewById(R.id.sendOTP);
         resendOTP = findViewById(R.id.resendOTP);
         buttonVerifyOTP = findViewById(R.id.verifyOTP);
         enterOTP = findViewById(R.id.inputOTP);
+
+        seller_phone = getIntent().getStringExtra("sellerPhone");
+
+
+        editTextMobile.setText(seller_phone);
 
         SpannableString span = new SpannableString("Didn't receive the code? Resend OTP.");
         ClickableSpan clickableSpan = new ClickableSpan() {
@@ -65,6 +74,7 @@ public class OTPAuth extends AppCompatActivity {
             public void onClick(View view) {
                 resendVerificationCode(editTextMobile.getText().toString(), mResendToken);
             }
+
             @Override
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
@@ -72,7 +82,7 @@ public class OTPAuth extends AppCompatActivity {
                 ds.setColor(Color.BLUE);
             }
         };
-        span.setSpan(clickableSpan, 25,36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span.setSpan(clickableSpan, 25, 36, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         resendOTP.setText(span);
         resendOTP.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -105,6 +115,7 @@ public class OTPAuth extends AppCompatActivity {
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+                enterOTP.setText(phoneAuthCredential.getSmsCode().toString());
                 signInWithPhoneAuthCredential(phoneAuthCredential);
             }
 
@@ -124,7 +135,7 @@ public class OTPAuth extends AppCompatActivity {
         buttonVerifyOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(enterOTP != null) {
+                if (enterOTP != null) {
                     PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(mVerificationId, enterOTP.getText().toString());
                     signInWithPhoneAuthCredential(phoneAuthCredential);
                 }
@@ -145,16 +156,65 @@ public class OTPAuth extends AppCompatActivity {
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     Toast.makeText(OTPAuth.this, "OTP verified", Toast.LENGTH_SHORT).show();
-                }
+                    boolean fromLogin = getIntent().getExtras().getBoolean("fromLoginActivity");
+                    if (fromLogin == false) {
 
-                else {
+                        writeNewUser(
+                                getIntent().getExtras().getString("sellerName"),
+                                getIntent().getExtras().getString("sellerPhone"),
+                                getIntent().getExtras().getString("sellerEmail"),
+                                getIntent().getExtras().getString("shopName"),
+                                getIntent().getExtras().getString("shopLocation"),
+                                getIntent().getExtras().getString("bidPrice"),
+                                Arrays.asList(getIntent().getExtras().getStringArray("selectedCategory")),
+                                getIntent().getExtras().getString("selectedRadioButton"));
+                    } else {
+                        Log.d("NUMBER:", seller_phone);
+                        Intent loginIntent = new Intent(OTPAuth.this, SellerDashboard.class);
+                        startActivity(loginIntent);
+                        finish();
+                    }
+
+                } else {
                     Toast.makeText(OTPAuth.this, "Invalid OTP Entered", Toast.LENGTH_SHORT).show();
-                    if(task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                    if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
 
                     }
                 }
+            }
+        });
+    }
+
+    private void writeNewUser(final String sellerName, String sellerPhone, String sellerEmail, String shopName, String shopLocation,
+                              String bidPrice, List selectedCategory, String selectedExtraOption) {
+        AddSeller seller = new AddSeller(sellerName, sellerPhone, sellerEmail, shopName, shopLocation, bidPrice,
+                Arrays.asList(selectedCategory), selectedExtraOption);
+        DatabaseReference rootRef = databaseReference.child("users");
+//        final DatabaseReference userRef = rootRef.push();
+        DatabaseReference sellerRef = rootRef.child("sellers");
+        final DatabaseReference userRef = sellerRef.push();
+        userRef.setValue(seller).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+
+                SharedPreferences pref = getSharedPreferences("docId", MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("documentID", userRef.getKey());
+                editor.apply();
+                Toast.makeText(getApplicationContext(), "Registration Successful!", Toast.LENGTH_SHORT).show();
+                Intent loginIntent = new Intent(OTPAuth.this, SellerDashboard.class);
+                loginIntent.putExtra("sellerName", sellerName);
+                startActivity(loginIntent);
+                finish();
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("Registration: ", "Error was: " + e.getMessage() + "");
+                Toast.makeText(getApplicationContext(), "Could not complete registraton. Please try again later", Toast.LENGTH_SHORT).show();
             }
         });
     }
