@@ -33,8 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_search_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\Anish Mistry" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_gender_female" />
+                            <entry key="sourceFile" value="F:\Documents\College Stuff\Christ\Sem V\Glocal\Icons\gender-female.svg" />
                           </map>
                         </option>
                       </PersistentState>

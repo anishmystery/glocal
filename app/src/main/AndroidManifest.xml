@@ -20,7 +20,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDXsSLViLDZToHk-9JasDtsc5J5D3gRRos" />
 
-        <activity android:name=".Login">
+        <activity android:name=".BuyerDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,8 @@
         <activity android:name=".Signup" />
         <activity android:name=".OTPAuth" />
         <activity android:name=".OnBoarding" />
-        <activity android:name=".SellerDashboard"></activity>
+        <activity android:name=".SellerDashboard" />
+        <activity android:name=".Login"></activity>
     </application>
 
 </manifest>

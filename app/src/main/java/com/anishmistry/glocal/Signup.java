@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class Signup extends AppCompatActivity {
 
-    Bundle bundle;
+    String fromLogin;
 //    private LinearLayout dotsLayout;
 //    private TextView[] dots;
 //    private Button buttonNext, buttonBack;
@@ -24,14 +24,24 @@ public class Signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        bundle = new Bundle();
-        Fragment fragment;
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragment = new RegisterSellerDetails();
-        fragmentTransaction.replace(R.id.container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-//        editTextSellerPhone = (EditText)findViewById(R.id.sellerPhone);
+        fromLogin = getIntent().getStringExtra("fromLogin");
+        if(fromLogin.equals("seller")) {
+            Fragment fragment;
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragment = new RegisterSellerDetails();
+            fragmentTransaction.replace(R.id.container, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        else {
+            Fragment fragment;
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragment = new RegisterBuyerDetails();
+            fragmentTransaction.replace(R.id.container, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+//        editTextSellerPhone = (EditText)findViewById(R.id.buyerPhone);
 //        buttonBack = (Button)findViewById(R.id.back);
 //        buttonNext = (Button)findViewById(R.id.next);
 //        dotsLayout = (LinearLayout)findViewById(R.id.dotsLayout);
@@ -80,9 +90,9 @@ public class Signup extends AppCompatActivity {
 ////                            phone = editTextSellerPhone.getText().toString().trim();
 ////                            email = editTextSellerEmail.getText().toString().trim();
 //
-////                            bundle.putString("sellerName", name);
-////                            bundle.putString("sellerPhone", phone);
-////                            bundle.putString("sellerEmail", email);
+////                            bundle.putString("buyerName", name);
+////                            bundle.putString("buyerPhone", phone);
+////                            bundle.putString("buyerEmail", email);
 ////                        }
 ////                    }
 //

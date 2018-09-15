@@ -20,6 +20,15 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="trialRoom">Trial Room: </string>
+    <string name="buyerDetails">Buyer Details</string>
+    <string name="buyerName">Name</string>
+    <string name="buyerPhone">Phone</string>
+    <string name="buyerEmail">Email</string>
+    <string name="buyerGender">Gender: </string>
+    <string name="buyerDOB">Date of Birth: </string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="buyerLocation">Location</string>
     <string name="otp">OTP</string>
     <string name="signup">Signup</string>
     <string name="sendOTP">Send OTP</string>
@@ -33,4 +42,5 @@
     <string name="next">Next</string>
     <string name="finish">Finish</string>
     <string name="title_activity_google_maps">Seller Location</string>
+
 </resources>

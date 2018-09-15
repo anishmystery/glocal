@@ -33,7 +33,7 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
     Bundle bundle;
     TextView textViewDots1, textViewDots2, textViewDots3, errorMessage;
     Button buttonSignup;
-    RadioGroup radioGrouopExtraOptions;
+    RadioGroup radioGroupExtraOptions;
     RadioButton radioButtonExtraOptions;
     TextView textViewExtraOptions;
     ProgressDialog dialog;
@@ -59,7 +59,7 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
         multiSelectSpinner.setListener(this);
 
         textViewExtraOptions = (TextView) view.findViewById(R.id.homeDelivery);
-        radioGrouopExtraOptions = (RadioGroup) view.findViewById(R.id.radioHomeDelivery);
+        radioGroupExtraOptions = (RadioGroup) view.findViewById(R.id.radioHomeDelivery);
         buttonBack = view.findViewById(R.id.back);
         textViewDots1 = view.findViewById(R.id.dots1);
         textViewDots2 = view.findViewById(R.id.dots2);
@@ -90,7 +90,7 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
                 final String shopName = getArguments().getString("shopName");
                 final String shopLocation = getArguments().getString("shopLocation");
                 final String bidPrice = getArguments().getString("bidPrice");
-                selectedRadioButtonId = radioGrouopExtraOptions.getCheckedRadioButtonId();
+                selectedRadioButtonId = radioGroupExtraOptions.getCheckedRadioButtonId();
                 radioButtonExtraOptions = (RadioButton) view.findViewById(selectedRadioButtonId);
                 if(radioButtonExtraOptions == null)
                     selectedRadioButton = "N/A";
@@ -101,10 +101,10 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
                 checkUserExists(sellerName, sellerPhone, sellerEmail, shopName, shopLocation, bidPrice, selectedCategory,
                         selectedRadioButton, false);
 //                Intent intent = new Intent(getActivity(), OTPAuth.class);
-//                intent.putExtra("sellerName", name);
-//                intent.putExtra("sellerPhone", phoneNumber);
-//                intent.putExtra("sellerEmail", email);
-//                intent.putExtra("shopName", shopName);
+//                intent.putExtra("buyerName", name);
+//                intent.putExtra("buyerPhone", phoneNumber);
+//                intent.putExtra("buyerEmail", email);
+//                intent.putExtra("buyerDOB", buyerDOB);
 //                intent.putExtra("shopLocation", shopLocation);
 //                intent.putExtra("bidPrice", bidPrice);
 //                intent.putExtra("selectedCategory", selectedCategory);
@@ -130,13 +130,13 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
         if (str.contains("Clothing")) {
             textViewExtraOptions.setVisibility(View.VISIBLE);
             textViewExtraOptions.setText(R.string.trialRoom);
-            radioGrouopExtraOptions.setVisibility(View.VISIBLE);
+            radioGroupExtraOptions.setVisibility(View.VISIBLE);
         }
 
         if ((str.contains("Electronics")) || (str.contains("Home & Furniture")) || (str.contains("Appliances"))) {
             textViewExtraOptions.setVisibility(View.VISIBLE);
             textViewExtraOptions.setText(R.string.homeDelivery);
-            radioGrouopExtraOptions.setVisibility(View.VISIBLE);
+            radioGroupExtraOptions.setVisibility(View.VISIBLE);
         }
 
         for (int i = 0; i < str.size(); i++) {
@@ -176,7 +176,7 @@ public class RegisterCategoryDetails extends Fragment implements MultiSelectSpin
                             intent.putExtra("selectedRadioButton", selectedRadioButton);
                             startActivity(intent);
 //                            Intent intent = new Intent(getActivity(), OTPAuth.class);
-//                            intent.putExtra("sellerPhone", phoneNumber);
+//                            intent.putExtra("buyerPhone", phoneNumber);
 //                            intent.putExtra("selectedCategory", selectedCategory);
 //                            intent.putExtra("selectedRadioButton", selectedRadioButton);
 //                            intent.putExtra("fromLoginActivity", whichActivity);

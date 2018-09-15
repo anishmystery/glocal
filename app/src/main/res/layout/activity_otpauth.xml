@@ -36,7 +36,7 @@
         android:layout_marginTop="50dp"
         android:inputType="phone"
         android:fontFamily="@font/quicksand"
-        android:hint="@string/sellerPhone"/>
+        android:hint="@string/buyerPhone"/>
 
     <Button
         android:id="@+id/sendOTP"
@@ -75,7 +75,7 @@
         <!--android:layout_marginTop="50dp"-->
         <!--android:inputType="phone"-->
         <!--android:fontFamily="@font/quicksand"-->
-        <!--android:hint="@string/sellerPhone"/>-->
+        <!--android:hint="@string/buyerPhone"/>-->
 
     <Button
         android:id="@+id/verifyOTP"

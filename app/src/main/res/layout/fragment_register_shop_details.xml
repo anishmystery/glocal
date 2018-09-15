@@ -115,7 +115,7 @@
             android:id="@+id/dots1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:text="&#8226;"
             android:textColor="@color/colorPrimary"/>
 
@@ -123,7 +123,7 @@
             android:id="@+id/dots2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:text="&#8226;"
             android:textColor="@color/colorAccent"/>
 
@@ -131,7 +131,7 @@
             android:id="@+id/dots3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:text="&#8226;"
             android:textColor="@color/colorPrimary"/>
 

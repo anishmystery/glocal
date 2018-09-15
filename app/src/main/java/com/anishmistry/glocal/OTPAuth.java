@@ -51,6 +51,9 @@ public class OTPAuth extends AppCompatActivity {
     private PhoneAuthProvider.ForceResendingToken mResendToken;
 
     private String seller_phone;
+    private String buyer_phone;
+
+    UserType ut = new UserType();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +67,17 @@ public class OTPAuth extends AppCompatActivity {
         enterOTP = findViewById(R.id.inputOTP);
 
         seller_phone = getIntent().getStringExtra("sellerPhone");
+        buyer_phone = getIntent().getStringExtra("buyerPhone");
 
+        if(seller_phone == null) {
+            editTextMobile.setText(buyer_phone);
+            ut.setUserType("Buyer");
+        }
 
-        editTextMobile.setText(seller_phone);
+        else {
+            editTextMobile.setText(seller_phone);
+            ut.setUserType("Seller");
+        }
 
         SpannableString span = new SpannableString("Didn't receive the code? Resend OTP.");
         ClickableSpan clickableSpan = new ClickableSpan() {
@@ -161,20 +172,37 @@ public class OTPAuth extends AppCompatActivity {
                     boolean fromLogin = getIntent().getExtras().getBoolean("fromLoginActivity");
                     if (fromLogin == false) {
 
-                        writeNewUser(
-                                getIntent().getExtras().getString("sellerName"),
-                                getIntent().getExtras().getString("sellerPhone"),
-                                getIntent().getExtras().getString("sellerEmail"),
-                                getIntent().getExtras().getString("shopName"),
-                                getIntent().getExtras().getString("shopLocation"),
-                                getIntent().getExtras().getString("bidPrice"),
-                                Arrays.asList(getIntent().getExtras().getStringArray("selectedCategory")),
-                                getIntent().getExtras().getString("selectedRadioButton"));
+                        if(ut.userType.equals("Seller")) {
+                            writeNewSeller(
+                                    getIntent().getExtras().getString("sellerName"),
+                                    getIntent().getExtras().getString("sellerPhone"),
+                                    getIntent().getExtras().getString("sellerEmail"),
+                                    getIntent().getExtras().getString("shopName"),
+                                    getIntent().getExtras().getString("shopLocation"),
+                                    getIntent().getExtras().getString("bidPrice"),
+                                    Arrays.asList(getIntent().getExtras().getStringArray("selectedCategory")),
+                                    getIntent().getExtras().getString("selectedRadioButton"));
+                        }
+
+                        else {
+                            writeNewBuyer(
+                                    getIntent().getExtras().getString("buyerName"),
+                                    getIntent().getExtras().getString("buyerPhone"),
+                                    getIntent().getExtras().getString("buyerEmail"),
+                                    getIntent().getExtras().getString("buyerDOB"),
+                                    getIntent().getExtras().getString("buyerGender"));
+                        }
                     } else {
-                        Log.d("NUMBER:", seller_phone);
-                        Intent loginIntent = new Intent(OTPAuth.this, SellerDashboard.class);
-                        startActivity(loginIntent);
-                        finish();
+                        if(getIntent().getExtras().getString("buyerPhone").equals("")) {
+                            Intent loginIntent = new Intent(OTPAuth.this, SellerDashboard.class);
+                            startActivity(loginIntent);
+                            finish();
+                        }
+                        else {
+                            Intent loginIntent = new Intent(OTPAuth.this, BuyerDashboard.class);
+                            startActivity(loginIntent);
+                            finish();
+                        }
                     }
 
                 } else {
@@ -187,7 +215,7 @@ public class OTPAuth extends AppCompatActivity {
         });
     }
 
-    private void writeNewUser(final String sellerName, String sellerPhone, String sellerEmail, String shopName, String shopLocation,
+    private void writeNewSeller(final String sellerName, String sellerPhone, String sellerEmail, String shopName, String shopLocation,
                               String bidPrice, List selectedCategory, String selectedExtraOption) {
         AddSeller seller = new AddSeller(sellerName, sellerPhone, sellerEmail, shopName, shopLocation, bidPrice,
                 Arrays.asList(selectedCategory), selectedExtraOption);
@@ -217,5 +245,35 @@ public class OTPAuth extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Could not complete registraton. Please try again later", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void writeNewBuyer(final String buyerName, String buyerPhone, String buyerEmail, String buyerDOB, String buyerGender) {
+        AddBuyer buyer = new AddBuyer(buyerName, buyerPhone, buyerEmail, buyerDOB, buyerGender);
+        DatabaseReference rootRef = databaseReference.child("users");
+//        final DatabaseReference userRef = rootRef.push();
+        DatabaseReference buyerRef = rootRef.child("buyers");
+        final DatabaseReference userRef = buyerRef.push();
+        userRef.setValue(buyer).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+
+                SharedPreferences pref = getSharedPreferences("docId", MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("documentID", userRef.getKey());
+                editor.apply();
+                Toast.makeText(getApplicationContext(), "Registration Successful!", Toast.LENGTH_SHORT).show();
+                Intent loginIntent = new Intent(OTPAuth.this, BuyerDashboard.class);
+                loginIntent.putExtra("buyerName", buyerName);
+                startActivity(loginIntent);
+                finish();
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("Registration: ", "Error was: " + e.getMessage() + "");
+                        Toast.makeText(getApplicationContext(), "Could not complete registraton. Please try again later", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

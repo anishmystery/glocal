@@ -36,7 +36,7 @@
         android:layout_marginTop="50dp"
         android:inputType="text"
         android:fontFamily="@font/quicksand"
-        android:hint="@string/sellerPhone"/>
+        android:hint="@string/buyerPhone"/>
 
     <Button
         android:id="@+id/login"
