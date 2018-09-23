@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page404">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/page404"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/title404"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No results!"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:paddingRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        />
+
+    <TextView
+        android:id="@+id/text404"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title404"
+        android:text="Seems like you aren't on earth"
+        android:textColor="@color/colorWhite"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnBackToEarth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text404"
+        android:layout_marginTop="35dp"
+        android:text="@string/button404"
+        android:textColor="@color/color404Background"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/flat_button"/>
+
+</RelativeLayout>

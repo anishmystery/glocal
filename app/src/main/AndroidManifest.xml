@@ -31,7 +31,13 @@
         <activity android:name=".OTPAuth" />
         <activity android:name=".OnBoarding" />
         <activity android:name=".SellerDashboard" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
+        <activity
+            android:name=".BuyerSearch"
+            android:label="@string/title_activity_buyer_search"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Page404" />
+        <activity android:name=".ShopDetails"></activity>
     </application>
 
 </manifest>

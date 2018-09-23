@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/backgroundColor"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".BuyerSearch"
+    android:scrollbars="none"
+    tools:showIn="@layout/app_bar_buyer_search">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/cardViewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/cardViewShopCategory"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/glocal_logo"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="5dp"
+                    android:textSize="22sp"
+                    android:text="0.0"
+                    android:textColor="@color/colorRedText"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopName"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Shop Name"
+
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewShopName"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Category"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewImage"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Address"/>
+
+                <TextView
+                    android:id="@+id/cardViewSponsored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewShopAddress"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="10dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorYellowText"
+                    android:text="Sponsored"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="4dp"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/cardViewImage1"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/cardViewShopCategory1"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/glocal_logo"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopRating1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="5dp"
+                    android:textSize="22sp"
+                    android:text="0.0"
+                    android:textColor="@color/colorRedText"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopName1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Shop Name"
+
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopCategory1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewShopName1"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Category"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopAddress1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewImage1"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Address"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView1"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="4dp"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/cardViewImage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/cardViewShopCategory2"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/glocal_logo"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopRating2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="5dp"
+                    android:textSize="22sp"
+                    android:text="0.0"
+                    android:textColor="@color/colorRedText"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopName2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Shop Name"
+
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopCategory2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewShopName2"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Category"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopAddress2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewImage2"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Address"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView2"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="4dp"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/cardViewImage3"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/cardViewShopCategory3"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/glocal_logo"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopRating3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="5dp"
+                    android:textSize="22sp"
+                    android:text="0.0"
+                    android:textColor="@color/colorRedText"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopName3"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Shop Name"
+
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopCategory3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewShopName3"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Category"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopAddress3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewImage3"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Address"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView3"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="4dp"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/cardViewImage4"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/cardViewShopCategory4"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/glocal_logo"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopRating4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="5dp"
+                    android:textSize="22sp"
+                    android:text="0.0"
+                    android:textColor="@color/colorRedText"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopName4"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Shop Name"
+
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopCategory4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewShopName4"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Category"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopAddress4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewImage4"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Address"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView4"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="4dp"
+            android:visibility="invisible">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/cardViewImage5"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/cardViewShopCategory5"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/glocal_logo"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopRating5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="5dp"
+                    android:textSize="22sp"
+                    android:text="0.0"
+                    android:textColor="@color/colorRedText"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopName5"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="Shop Name"
+
+                    android:textColor="#000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopCategory5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewShopName5"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Category"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/cardViewShopAddress5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardViewImage5"
+                    android:paddingTop="10dp"
+                    android:textSize="16sp"
+                    android:text="Shop Address"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+</ScrollView>

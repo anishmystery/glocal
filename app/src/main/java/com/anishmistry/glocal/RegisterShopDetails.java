@@ -67,7 +67,6 @@ public class RegisterShopDetails extends Fragment {
                     editTextShopLocation.setText(place.getAddress());
                     shopName = place.getName().toString();
                     shopLocation = place.getAddress().toString();
-
                 }
             }
 

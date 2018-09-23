@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".BuyerDashboard">
+
+    <TextView
+        android:id="@+id/textCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/selectCategory"
+        android:textSize="25sp"
+        android:padding="30dp"
+        android:gravity="center"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipAppliances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textCategory"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/appliances"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipBooks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textCategory"
+        android:layout_toRightOf="@+id/chipAppliances"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/books"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipClothing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textCategory"
+        android:layout_toRightOf="@+id/chipBooks"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/clothing"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipElectronics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chipAppliances"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/electronics"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipExcerciseFitness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chipAppliances"
+        android:layout_toRightOf="@+id/chipElectronics"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/excericesFitness"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipHomeFurniture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chipElectronics"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/homeFurniture"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipStationary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chipElectronics"
+        android:layout_toRightOf="@+id/chipHomeFurniture"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/stationary"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <com.robertlevonyan.views.chip.Chip
+        android:id="@+id/chipToys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chipHomeFurniture"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        app:mcv_chipText="@string/toys"
+        app:mcv_selectable="true"
+        app:mcv_backgroundColor="@color/colorChipBackground"
+        app:mcv_closeColor="@color/colorChipCloseClicked"
+        app:mcv_selectedBackgroundColor="@color/colorChipBackgroundClicked"
+        app:mcv_textColor="@color/colorChipText"/>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_style"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/next"
+        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:elevation="50dp"
+        android:shadowColor="@color/editText"/>
+
+
+</RelativeLayout>

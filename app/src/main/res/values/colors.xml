@@ -13,4 +13,11 @@
     <color name="colorChipTextClicked">#F5F5F5</color>
     <color name="colorChipCloseInactive">#757575</color>
     <color name="colorChipCloseClicked">#F5F5F5</color>
+    <color name="backgroundColor">#F5F5F6</color>
+    <color name="colorGreenText">#00A03C</color>
+    <color name="colorBlueTitle">#007584</color>
+    <color name="colorYellowText">#F37F14</color>
+    <color name="colorBlueText">#00C6DB</color>
+    <color name="colorRedText">#FF0000</color>
+    <color name="color404Background">#0B1D45</color>
 </resources>

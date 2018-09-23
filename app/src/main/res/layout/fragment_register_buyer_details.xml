@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RegisterBuyerDetails">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="@string/buyerDetails"
+                android:textSize="18sp"
+                android:layout_below="@+id/title"/>
+
+            <EditText
+                android:id="@+id/buyerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subtitle"
+                android:layout_marginTop="30dp"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/quicksand"
+                android:hint="@string/buyerName"/>
+
+            <EditText
+                android:id="@+id/buyerPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buyerName"
+                android:layout_marginTop="20dp"
+                android:inputType="phone"
+                android:fontFamily="@font/quicksand"
+                android:hint="@string/buyerPhone" />
+
+            <EditText
+                android:id="@+id/buyerEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buyerPhone"
+                android:layout_marginTop="20dp"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/quicksand"
+                android:hint="@string/buyerEmail" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/buyerEmail"
+                android:fontFamily="@font/quicksand"
+                android:layout_marginTop="20dp"
+                android:text="@string/buyerGender"
+                android:textSize="18sp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/gender"
+                android:layout_toEndOf="@+id/gender"
+                android:layout_toRightOf="@id/gender"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/quicksand"
+                    android:textSize="18sp"
+                    android:text="@string/female" />
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/quicksand"
+                    android:textSize="18sp"
+                    android:text="@string/male" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/buyerDOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radioGender"
+                android:layout_marginTop="20dp"
+                android:inputType="date"
+                android:fontFamily="@font/quicksand"
+                android:hint="@string/buyerDOB" />
+
+            <Button
+                android:id="@+id/signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buyerDOB"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_style"
+                android:fontFamily="@font/quicksand"
+                android:text="@string/signup"
+                android:textSize="18sp"
+                android:textColor="#FFF"
+                android:elevation="50dp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

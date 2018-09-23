@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_outline_account_circle_24px"
+            android:title="Account" />
+        <!--<item-->
+            <!--android:id="@+id/nav_reviews"-->
+            <!--android:icon="@drawable/ic_review"-->
+            <!--android:title="Reviews" />-->
+    </group>
+        <!--<item-->
+            <!--android:id="@+id/nav_slideshow"-->
+            <!--android:icon="@drawable/ic_menu_slideshow"-->
+            <!--android:title="Slideshow" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_manage"-->
+            <!--android:icon="@drawable/ic_menu_manage"-->
+            <!--android:title="Tools" />-->
+
+    <group
+        android:id="@+id/menu_middle"
+        android:checkableBehavior="single">
+        <item
+            android:title="Need Help?">
+            <menu>
+                <item
+                    android:id="@+id/nav_faq"
+                    android:icon="@drawable/ic_information"
+                    android:title="FAQs" />
+                <item
+                    android:id="@+id/nav_contact"
+                    android:icon="@drawable/ic_outline_phone_24px"
+                    android:title="Contact Us" />
+                <item
+                    android:id="@+id/nav_rate"
+                    android:icon="@drawable/ic_outline_star_rate_18px"
+                    android:title="Rate Us" />
+                <!--<item-->
+                    <!--android:id="@+id/nav_about"-->
+                    <!--android:icon="@drawable/ic_menu_send"-->
+                    <!--android:title="About Us" />-->
+                <!--<item-->
+                    <!--android:id="@+id/nav_feedback"-->
+                    <!--android:icon="@drawable/ic_menu_send"-->
+                    <!--android:title="Give Feedback" />-->
+            </menu>
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_outline_exit_to_app_24px"
+            android:title="Sign Out" />
+    </group>
+</menu>

@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_search_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_person_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -34,8 +34,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_gender_female" />
-                            <entry key="sourceFile" value="F:\Documents\College Stuff\Christ\Sem V\Glocal\Icons\gender-female.svg" />
+                            <entry key="outputName" value="ic_outline_star_rate_18px" />
+                            <entry key="sourceFile" value="F:\Documents\College Stuff\Christ\Sem V\Glocal\outline-star_rate-18px.svg" />
                           </map>
                         </option>
                       </PersistentState>

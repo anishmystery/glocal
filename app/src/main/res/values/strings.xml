@@ -42,5 +42,22 @@
     <string name="next">Next</string>
     <string name="finish">Finish</string>
     <string name="title_activity_google_maps">Seller Location</string>
+    <string name="selectCategory">Select Category</string>
+    <string name="appliances">Appliances</string>
+    <string name="books">Books</string>
+    <string name="clothing">Clothing</string>
+    <string name="electronics">Electronics</string>
+    <string name="excericesFitness">Exercise &amp; Fitness</string>
+    <string name="homeFurniture">Home &amp; Furniture</string>
+    <string name="stationary">Stationary</string>
+    <string name="toys">Toys</string>
+    <string name="title_activity_buyer_search">BuyerSearch</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Buyer Name</string>
+    <string name="nav_header_subtitle">Buyer Phone</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="button404">Back to Earth</string>
 
 </resources>
