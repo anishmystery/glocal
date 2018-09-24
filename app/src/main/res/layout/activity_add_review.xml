@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".AddReview">
+
+    <TextView
+        android:id="@+id/textShopName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/shopName"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/textRatingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textShopName"
+        android:layout_marginTop="20dp"
+        android:textSize="12sp"
+        android:text="@string/rateExperience"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textRatingTitle"
+        android:layout_marginTop="10dp"
+        android:progressTint="@color/colorGoldYellow"
+        android:secondaryProgressTint="@color/colorGoldYellow"/>
+
+    <TextView
+        android:id="@+id/textReviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating"
+        android:layout_marginTop="20dp"
+        android:textSize="12sp"
+        android:text="@string/reviewTitle"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <EditText
+        android:id="@+id/reviewInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textReviewTitle"
+        android:layout_marginTop="10dp"
+        android:hint="@string/reviewInfo"/>
+
+    <Button
+        android:id="@+id/btnSubmitReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_style"
+        android:text="@string/submit"
+        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:elevation="50dp"
+        android:shadowColor="@color/editText"/>
+
+
+</RelativeLayout>

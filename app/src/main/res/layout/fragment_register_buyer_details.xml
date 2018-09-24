@@ -9,7 +9,8 @@
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,32 +28,68 @@
                 android:textSize="18sp"
                 android:layout_below="@+id/title"/>
 
+            <TextView
+                android:id="@+id/buyerNameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subtitle"
+                android:layout_marginTop="50dp"
+                android:text="@string/buyerName"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
             <EditText
                 android:id="@+id/buyerName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/subtitle"
-                android:layout_marginTop="30dp"
+                android:layout_below="@id/buyerNameTitle"
+                android:layout_marginTop="5dp"
                 android:inputType="textPersonName"
                 android:fontFamily="@font/quicksand"
                 android:hint="@string/buyerName"/>
+
+            <TextView
+                android:id="@+id/buyerPhoneTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buyerName"
+                android:layout_marginTop="20dp"
+                android:text="@string/buyerPhone"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/buyerPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/buyerName"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/buyerPhoneTitle"
+                android:layout_marginTop="5dp"
                 android:inputType="phone"
                 android:fontFamily="@font/quicksand"
                 android:hint="@string/buyerPhone" />
+
+            <TextView
+                android:id="@+id/buyerEmailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buyerPhone"
+                android:layout_marginTop="20dp"
+                android:text="@string/buyerEmail"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/buyerEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/buyerPhone"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/buyerEmailTitle"
+                android:layout_marginTop="5dp"
                 android:inputType="textEmailAddress"
                 android:fontFamily="@font/quicksand"
                 android:hint="@string/buyerEmail" />
@@ -97,12 +134,24 @@
 
             </RadioGroup>
 
+            <TextView
+                android:id="@+id/buyerDOBTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radioGender"
+                android:layout_marginTop="20dp"
+                android:text="@string/buyerDOB"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
             <EditText
                 android:id="@+id/buyerDOB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/radioGender"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/buyerDOBTitle"
+                android:layout_marginTop="5dp"
                 android:inputType="date"
                 android:fontFamily="@font/quicksand"
                 android:hint="@string/buyerDOB" />
@@ -114,6 +163,7 @@
                 android:layout_below="@id/buyerDOB"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/button_style"
                 android:fontFamily="@font/quicksand"
                 android:text="@string/signup"

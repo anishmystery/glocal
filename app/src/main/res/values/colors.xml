@@ -20,4 +20,5 @@
     <color name="colorBlueText">#00C6DB</color>
     <color name="colorRedText">#FF0000</color>
     <color name="color404Background">#0B1D45</color>
+    <color name="colorGoldYellow">#FFDF00</color>
 </resources>

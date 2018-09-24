@@ -21,32 +21,68 @@
             android:textSize="18sp"
             android:layout_below="@+id/title"/>
 
+        <TextView
+            android:id="@+id/sellerNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtitle"
+            android:layout_marginTop="30dp"
+            android:text="@string/sellerName"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
         <EditText
             android:id="@+id/sellerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/subtitle"
-            android:layout_marginTop="30dp"
+            android:layout_below="@id/sellerNameTitle"
+            android:layout_marginTop="5dp"
             android:inputType="textPersonName"
             android:fontFamily="@font/quicksand"
             android:hint="@string/sellerName"/>
+
+        <TextView
+            android:id="@+id/sellerPhoneTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sellerName"
+            android:layout_marginTop="20dp"
+            android:text="@string/sellerPhone"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
         <EditText
             android:id="@+id/sellerPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sellerName"
-            android:layout_marginTop="20dp"
+            android:layout_below="@id/sellerPhoneTitle"
+            android:layout_marginTop="5dp"
             android:inputType="phone"
             android:fontFamily="@font/quicksand"
             android:hint="@string/sellerPhone" />
+
+        <TextView
+            android:id="@+id/sellerEmailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sellerPhone"
+            android:layout_marginTop="20dp"
+            android:text="@string/sellerEmail"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
         <EditText
             android:id="@+id/sellerEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sellerPhone"
-            android:layout_marginTop="20dp"
+            android:layout_below="@id/sellerEmailTitle"
+            android:layout_marginTop="5dp"
             android:inputType="textEmailAddress"
             android:fontFamily="@font/quicksand"
             android:hint="@string/sellerEmail" />

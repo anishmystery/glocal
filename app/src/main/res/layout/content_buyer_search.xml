@@ -13,7 +13,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardView"
@@ -36,23 +36,24 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/glocal_logo"/>
 
-                <TextView
-                    android:id="@+id/cardViewShopRating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingLeft="5dp"
-                    android:textSize="22sp"
-                    android:text="0.0"
-                    android:textColor="@color/colorRedText"
-                    android:textStyle="bold"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopRating"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:paddingStart="5dp"-->
+                    <!--android:paddingEnd="5dp"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopRating"-->
+                    <!--android:textColor="@color/colorRedText"-->
+                    <!--android:textStyle="bold"/>-->
 
                 <TextView
                     android:id="@+id/cardViewShopName"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:text="Shop Name"
+                    android:text="@string/shopName"
 
                     android:textColor="#000"
                     android:textStyle="bold"/>
@@ -64,7 +65,7 @@
                     android:layout_below="@id/cardViewShopName"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Category"
+                    android:text="@string/shopCategory"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -74,18 +75,18 @@
                     android:layout_below="@id/cardViewImage"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Address"/>
+                    android:text="@string/shopLocation"/>
 
                 <TextView
                     android:id="@+id/cardViewSponsored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cardViewShopAddress"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:paddingTop="10dp"
                     android:textSize="12sp"
-                    android:textColor="@color/colorYellowText"
-                    android:text="Sponsored"/>
+                    android:textColor="#D4AF37"
+                    android:text="@string/sponsored"/>
 
             </RelativeLayout>
 
@@ -114,23 +115,24 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/glocal_logo"/>
 
-                <TextView
-                    android:id="@+id/cardViewShopRating1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingLeft="5dp"
-                    android:textSize="22sp"
-                    android:text="0.0"
-                    android:textColor="@color/colorRedText"
-                    android:textStyle="bold"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopRating1"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:paddingStart="5dp"-->
+                    <!--android:paddingEnd="5dp"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopRating"-->
+                    <!--android:textColor="@color/colorRedText"-->
+                    <!--android:textStyle="bold"/>-->
 
                 <TextView
                     android:id="@+id/cardViewShopName1"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:text="Shop Name"
+                    android:text="@string/shopName"
 
                     android:textColor="#000"
                     android:textStyle="bold"/>
@@ -142,7 +144,7 @@
                     android:layout_below="@id/cardViewShopName1"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Category"
+                    android:text="@string/shopCategory"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -152,7 +154,7 @@
                     android:layout_below="@id/cardViewImage1"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Address"/>
+                    android:text="@string/shopCategory"/>
 
             </RelativeLayout>
 
@@ -181,24 +183,24 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/glocal_logo"/>
 
-                <TextView
-                    android:id="@+id/cardViewShopRating2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingLeft="5dp"
-                    android:textSize="22sp"
-                    android:text="0.0"
-                    android:textColor="@color/colorRedText"
-                    android:textStyle="bold"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopRating2"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:paddingStart="5dp"-->
+                    <!--android:paddingEnd="5dp"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopRating"-->
+                    <!--android:textColor="@color/colorRedText"-->
+                    <!--android:textStyle="bold"/>-->
 
                 <TextView
                     android:id="@+id/cardViewShopName2"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:text="Shop Name"
-
+                    android:text="@string/shopName"
                     android:textColor="#000"
                     android:textStyle="bold"/>
 
@@ -209,7 +211,7 @@
                     android:layout_below="@id/cardViewShopName2"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Category"
+                    android:text="@string/shopCategory"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -219,7 +221,7 @@
                     android:layout_below="@id/cardViewImage2"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Address"/>
+                    android:text="@string/shopLocation"/>
 
             </RelativeLayout>
 
@@ -248,23 +250,24 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/glocal_logo"/>
 
-                <TextView
-                    android:id="@+id/cardViewShopRating3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingLeft="5dp"
-                    android:textSize="22sp"
-                    android:text="0.0"
-                    android:textColor="@color/colorRedText"
-                    android:textStyle="bold"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopRating3"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:paddingStart="5dp"-->
+                    <!--android:paddingEnd="5dp"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopRating"-->
+                    <!--android:textColor="@color/colorRedText"-->
+                    <!--android:textStyle="bold"/>-->
 
                 <TextView
                     android:id="@+id/cardViewShopName3"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:text="Shop Name"
+                    android:text="@string/shopName"
 
                     android:textColor="#000"
                     android:textStyle="bold"/>
@@ -276,7 +279,7 @@
                     android:layout_below="@id/cardViewShopName3"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Category"
+                    android:text="@string/shopCategory"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -286,7 +289,7 @@
                     android:layout_below="@id/cardViewImage3"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Address"/>
+                    android:text="@string/shopLocation"/>
 
             </RelativeLayout>
 
@@ -315,23 +318,24 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/glocal_logo"/>
 
-                <TextView
-                    android:id="@+id/cardViewShopRating4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingLeft="5dp"
-                    android:textSize="22sp"
-                    android:text="0.0"
-                    android:textColor="@color/colorRedText"
-                    android:textStyle="bold"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopRating4"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:paddingStart="5dp"-->
+                    <!--android:paddingEnd="5dp"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopRating"-->
+                    <!--android:textColor="@color/colorRedText"-->
+                    <!--android:textStyle="bold"/>-->
 
                 <TextView
                     android:id="@+id/cardViewShopName4"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:text="Shop Name"
+                    android:text="@string/shopName"
 
                     android:textColor="#000"
                     android:textStyle="bold"/>
@@ -343,7 +347,7 @@
                     android:layout_below="@id/cardViewShopName4"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Category"
+                    android:text="@string/shopCategory"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -353,7 +357,7 @@
                     android:layout_below="@id/cardViewImage4"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Address"/>
+                    android:text="@string/shopLocation"/>
 
             </RelativeLayout>
 
@@ -382,23 +386,24 @@
                     android:layout_marginTop="10dp"
                     android:src="@drawable/glocal_logo"/>
 
-                <TextView
-                    android:id="@+id/cardViewShopRating5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:paddingLeft="5dp"
-                    android:textSize="22sp"
-                    android:text="0.0"
-                    android:textColor="@color/colorRedText"
-                    android:textStyle="bold"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopRating5"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:paddingStart="5dp"-->
+                    <!--android:paddingEnd="5dp"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopRating"-->
+                    <!--android:textColor="@color/colorRedText"-->
+                    <!--android:textStyle="bold"/>-->
 
                 <TextView
                     android:id="@+id/cardViewShopName5"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="22sp"
-                    android:text="Shop Name"
+                    android:text="@string/shopName"
 
                     android:textColor="#000"
                     android:textStyle="bold"/>
@@ -410,7 +415,7 @@
                     android:layout_below="@id/cardViewShopName5"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Category"
+                    android:text="@string/shopCategory"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -420,11 +425,147 @@
                     android:layout_below="@id/cardViewImage5"
                     android:paddingTop="10dp"
                     android:textSize="16sp"
-                    android:text="Shop Address"/>
+                    android:text="@string/shopLocation"/>
 
             </RelativeLayout>
 
         </android.support.v7.widget.CardView>
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/cardView6"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/cardView5"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--app:cardCornerRadius="4dp"-->
+            <!--android:visibility="invisible">-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relativeLayout6"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:padding="12dp">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/cardViewImage6"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_below="@+id/cardViewShopCategory6"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:src="@drawable/glocal_logo"/>-->
+
+                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/cardViewShopRating5"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:paddingStart="5dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:paddingEnd="5dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="22sp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="@string/shopRating"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="@color/colorRedText"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textStyle="bold"/>&ndash;&gt;-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopName6"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopName"-->
+
+                    <!--android:textColor="#000"-->
+                    <!--android:textStyle="bold"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopCategory6"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/cardViewShopName6"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="@string/shopCategory"-->
+                    <!--android:textStyle="bold"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopAddress6"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/cardViewImage6"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="@string/shopLocation"/>-->
+
+            <!--</RelativeLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/cardView7"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/cardView6"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--app:cardCornerRadius="4dp"-->
+            <!--android:visibility="invisible">-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relativeLayout7"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:padding="12dp">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/cardViewImage7"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="80dp"-->
+                    <!--android:layout_below="@+id/cardViewShopCategory7"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:src="@drawable/glocal_logo"/>-->
+
+                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/cardViewShopRating5"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:paddingStart="5dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:paddingEnd="5dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="22sp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="@string/shopRating"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="@color/colorRedText"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textStyle="bold"/>&ndash;&gt;-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopName7"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="22sp"-->
+                    <!--android:text="@string/shopName"-->
+
+                    <!--android:textColor="#000"-->
+                    <!--android:textStyle="bold"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopCategory7"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/cardViewShopName7"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="@string/shopCategory"-->
+                    <!--android:textStyle="bold"/>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cardViewShopAddress7"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@id/cardViewImage7"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="@string/shopLocation"/>-->
+
+            <!--</RelativeLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
 
     </RelativeLayout>
 

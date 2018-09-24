@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".SendFeedback">
+
+    <TextView
+        android:id="@+id/textFeedbackTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/feedback"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/textFeedbackInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textFeedbackTitle"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:text="@string/feedbackInfo"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/textFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textFeedbackInfo"
+        android:layout_marginTop="20dp"
+        android:hint="@string/enterFeedback"/>
+
+    <TextView
+        android:id="@+id/textHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textFeedback"
+        android:layout_marginTop="50dp"
+        android:textSize="16sp"
+        android:text="@string/helpInfo"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnSubmitFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textHelp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_style"
+        android:text="@string/send"
+        android:textSize="18sp"
+        android:textColor="#FFF"
+        android:elevation="50dp"
+        android:shadowColor="@color/editText"/>
+
+</RelativeLayout>

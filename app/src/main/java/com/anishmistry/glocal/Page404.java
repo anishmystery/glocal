@@ -29,6 +29,7 @@ public class Page404 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        finish();
         Intent intent = new Intent(getApplicationContext(), BuyerDashboard.class);
         startActivity(intent);
     }

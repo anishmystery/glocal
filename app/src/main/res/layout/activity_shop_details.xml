@@ -1,9 +1,324 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ShopDetails">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/shopImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        />
+
+    <ScrollView
+
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/shopName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="@string/shopName"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/shopRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/shopRating"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorGreenText"/>
+
+            <TextView
+                android:id="@+id/shopCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopName"
+                android:layout_marginTop="10dp"
+                android:text="@string/shopCategory"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/shopStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopCategory"
+                android:layout_marginTop="10dp"
+                android:text="@string/shopOpen"
+                android:textSize="16sp"
+                android:textColor="@color/colorGreenText"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/shopTiming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopCategory"
+                android:layout_toEndOf="@id/shopStatus"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/shopTiming"
+                android:textSize="16sp"
+                android:textColor="@color/colorGreenText"
+                android:textStyle="bold"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/shopStatus"
+                android:layout_marginTop="10dp"
+                android:background="@color/editText"/>
+
+            <Button
+                android:id="@+id/btnReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:drawableTop="@drawable/ic_outline_rate_review_24px"
+                android:drawablePadding="10dp"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:text="Review"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:drawableTop="@drawable/ic_outline_place_24px"
+                android:drawablePadding="10dp"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:text="Location"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:drawableTop="@drawable/ic_outline_share_24px"
+                android:drawablePadding="10dp"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:text="Share"
+                android:textStyle="bold"/>
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btnReview"
+                android:layout_marginTop="10dp"
+                android:background="@color/editText"/>
+
+            <TextView
+                android:id="@+id/shopDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider1"
+                android:layout_marginTop="10dp"
+                android:text="@string/details"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/shopAddressTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopDetails"
+                android:layout_marginTop="20dp"
+                android:textSize="12sp"
+                android:text="@string/address"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/shopAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopAddressTitle"
+                android:layout_marginTop="2dp"
+                android:text="@string/address"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/bestsellerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopAddress"
+                android:layout_marginTop="20dp"
+                android:text="@string/bestseller"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#D4AF37"/>
+
+            <TextView
+                android:id="@+id/bestseller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bestsellerTitle"
+                android:layout_marginTop="2dp"
+                android:text="@string/bestseller"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/averageCostTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bestseller"
+                android:layout_marginTop="20dp"
+                android:text="@string/averageCost"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/costInfo"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_below="@+id/bestseller"
+                android:layout_toEndOf="@+id/averageCostTitle"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/ic_outline_info_24px"
+                />
+
+            <TextView
+                android:id="@+id/averageCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/averageCostTitle"
+                android:layout_marginTop="2dp"
+                android:text="@string/averageCost"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/taxInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/averageCost"
+                android:layout_marginTop="2dp"
+                android:text="@string/taxInfo"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/paymentModeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/taxInfo"
+                android:layout_marginTop="20dp"
+                android:text="@string/paymentMode"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/paymentMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/paymentModeTitle"
+                android:layout_marginTop="2dp"
+                android:text="@string/paymentMode"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/moreInfoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/paymentMode"
+                android:layout_marginTop="20dp"
+                android:text="@string/moreInfo"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/moreInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moreInfoTitle"
+                android:layout_marginTop="2dp"
+                android:text="@string/moreInfo"
+                android:textSize="16sp"
+                android:textColor="#000"/>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/moreInfo"
+                android:layout_marginTop="10dp"
+                android:background="@color/editText"/>
+
+            <TextView
+                android:id="@+id/questionsTitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider2"
+                android:layout_marginTop="10dp"
+                android:text="@string/questions"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/questionsInfo"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/questionsTitle"
+                android:layout_marginTop="10dp"
+                android:text="@string/callInfo"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnCall"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/divider2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/call"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/call_button"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

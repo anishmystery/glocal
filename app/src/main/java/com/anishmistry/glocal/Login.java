@@ -65,10 +65,10 @@ public class Login extends AppCompatActivity {
         if (fromOnboarding == null)
             startActivity(new Intent(getApplicationContext(), OnBoarding.class));
         editTextPhone = findViewById(R.id.username);
+        editTextPhone.setText("+91");
         buttonLogin = findViewById(R.id.login);
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
-
-     mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseAuth = FirebaseAuth.getInstance();
        /*  mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(FirebaseAuth firebaseAuth) {

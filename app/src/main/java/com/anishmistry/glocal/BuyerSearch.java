@@ -41,7 +41,7 @@ public class BuyerSearch extends AppCompatActivity
 
     private DatabaseReference mDatabaseReference;
     private FirebaseAuth mFirebaseAuth;
-    ArrayList selectedCategoryList, shopList, shopAddressList, shopCategory;
+    ArrayList selectedCategoryList, shopList, shopAddressList, shopCategory, allShopsList;
     ArrayList<Integer> shopBidPrice;
     String selectedCategory;
     CardView cardView, cardView1, cardView2, cardView3, cardView4, cardView5;
@@ -51,9 +51,9 @@ public class BuyerSearch extends AppCompatActivity
     TextView textViewShopName3, textViewShopAddress3, textViewShopCategory3, textViewShopRating3;
     TextView textViewShopName4, textViewShopAddress4, textViewShopCategory4, textViewShopRating4;
     TextView textViewShopName5, textViewShopAddress5, textViewShopCategory5, textViewShopRating5;
-//    TextView textViewShopName6, textViewShopAddress6, textViewShopCategory6, textViewShopRating6;
-//    TextView textViewShopName7, textViewShopAddress7, textViewShopCategory7, textViewShopRating7;
-    ImageView imageViewShopImage, imageViewShopImage1, imageViewShopImage2, imageViewShopImage3, imageViewShopImage4, imageViewShopImage5;
+    TextView textViewShopName6, textViewShopAddress6, textViewShopCategory6, textViewShopRating6;
+    TextView textViewShopName7, textViewShopAddress7, textViewShopCategory7, textViewShopRating7;
+//    ImageView imageViewShopImage, imageViewShopImage1, imageViewShopImage2, imageViewShopImage3, imageViewShopImage4, imageViewShopImage5;
     ProgressDialog dialog;
 //    RelativeLayout.LayoutParams cardLayoutParams, imageLayoutParams, shopNameLayoutParams, shopAddressLayoutParams, shopCategoryLayoutParams, shopRatingLayoutParams;
 //    int shopNamePaddingLeft, shopNamePaddingTop;
@@ -75,94 +75,66 @@ public class BuyerSearch extends AppCompatActivity
         shopAddressList = new ArrayList();
         shopCategory = new ArrayList();
         shopBidPrice = new ArrayList<Integer>();
+        allShopsList = new ArrayList();
         selectedCategoryList = getIntent().getParcelableArrayListExtra("chips");
         selectedCategory = TextUtils.join(", ", selectedCategoryList);
 //        cardViewId = "R.id.cardView";
 
         cardView = findViewById(R.id.cardView);
-        imageViewShopImage = findViewById(R.id.cardViewImage);
+//        imageViewShopImage = findViewById(R.id.cardViewImage);
         textViewShopName = findViewById(R.id.cardViewShopName);
         textViewShopAddress = findViewById(R.id.cardViewShopAddress);
         textViewShopCategory = findViewById(R.id.cardViewShopCategory);
-        textViewShopRating = findViewById(R.id.cardViewShopRating);
+//        textViewShopRating = findViewById(R.id.cardViewShopRating);
 
         cardView1 = findViewById(R.id.cardView1);
-        imageViewShopImage1 = findViewById(R.id.cardViewImage1);
+//        imageViewShopImage1 = findViewById(R.id.cardViewImage1);
         textViewShopName1 = findViewById(R.id.cardViewShopName1);
         textViewShopAddress1 = findViewById(R.id.cardViewShopAddress1);
         textViewShopCategory1 = findViewById(R.id.cardViewShopCategory1);
-        textViewShopRating1 = findViewById(R.id.cardViewShopRating1);
+//        textViewShopRating1 = findViewById(R.id.cardViewShopRating1);
 
         cardView2 = findViewById(R.id.cardView2);
-        imageViewShopImage2 = findViewById(R.id.cardViewImage2);
+//        imageViewShopImage2 = findViewById(R.id.cardViewImage2);
         textViewShopName2 = findViewById(R.id.cardViewShopName2);
         textViewShopAddress2 = findViewById(R.id.cardViewShopAddress2);
         textViewShopCategory2 = findViewById(R.id.cardViewShopCategory2);
-        textViewShopRating2 = findViewById(R.id.cardViewShopRating2);
+//        textViewShopRating2 = findViewById(R.id.cardViewShopRating2);
 
         cardView3 = findViewById(R.id.cardView3);
-        imageViewShopImage3 = findViewById(R.id.cardViewImage3);
+//        imageViewShopImage3 = findViewById(R.id.cardViewImage3);
         textViewShopName3 = findViewById(R.id.cardViewShopName3);
         textViewShopAddress3 = findViewById(R.id.cardViewShopAddress3);
         textViewShopCategory3 = findViewById(R.id.cardViewShopCategory3);
-        textViewShopRating3 = findViewById(R.id.cardViewShopRating3);
+//        textViewShopRating3 = findViewById(R.id.cardViewShopRating3);
 
-        cardView4 = findViewById(R.id.cardView);
-        imageViewShopImage4 = findViewById(R.id.cardViewImage4);
+        cardView4 = findViewById(R.id.cardView4);
+//        imageViewShopImage4 = findViewById(R.id.cardViewImage4);
         textViewShopName4 = findViewById(R.id.cardViewShopName4);
         textViewShopAddress4 = findViewById(R.id.cardViewShopAddress4);
         textViewShopCategory4 = findViewById(R.id.cardViewShopCategory4);
-        textViewShopRating4 = findViewById(R.id.cardViewShopRating4);
+//        textViewShopRating4 = findViewById(R.id.cardViewShopRating4);
 
         cardView5 = findViewById(R.id.cardView5);
-        imageViewShopImage5 = findViewById(R.id.cardViewImage5);
+//        imageViewShopImage5 = findViewById(R.id.cardViewImage5);
         textViewShopName5 = findViewById(R.id.cardViewShopName5);
         textViewShopAddress5 = findViewById(R.id.cardViewShopAddress5);
         textViewShopCategory5 = findViewById(R.id.cardViewShopCategory5);
-        textViewShopRating5 = findViewById(R.id.cardViewShopRating5);
+//        textViewShopRating5 = findViewById(R.id.cardViewShopRating5);
 
 //        cardView6 = findViewById(R.id.cardView6);
-//        imageViewShopImage6 = findViewById(R.id.cardViewImage6);
+////        imageViewShopImage6 = findViewById(R.id.cardViewImage6);
 //        textViewShopName6 = findViewById(R.id.cardViewShopName6);
 //        textViewShopAddress6 = findViewById(R.id.cardViewShopAddress6);
 //        textViewShopCategory6 = findViewById(R.id.cardViewShopCategory6);
-//        textViewShopRating6 = findViewById(R.id.cardViewShopRating6);
-//
+////        textViewShopRating6 = findViewById(R.id.cardViewShopRating6);
+////
 //        cardView7 = findViewById(R.id.cardView7);
-//        imageViewShopImage7 = findViewById(R.id.cardViewImage7);
+////        imageViewShopImage7 = findViewById(R.id.cardViewImage7);
 //        textViewShopName7 = findViewById(R.id.cardViewShopName7);
 //        textViewShopAddress7 = findViewById(R.id.cardViewShopAddress7);
 //        textViewShopCategory7 = findViewById(R.id.cardViewShopCategory7);
-//        textViewShopRating7 = findViewById(R.id.cardViewShopRating7);
-
-//        cardLayoutParams = cardView.getLayoutParams();
-//        imageLayoutParams = imageViewShopImage.getLayoutParams();
-//        shopNameLayoutParams = textViewShopName.getLayoutParams();
-//        shopAddressLayoutParams = textViewShopAddress.getLayoutParams();
-//        shopCategoryLayoutParams = textViewShopCategory.getLayoutParams();
-//        shopRatingLayoutParams = textViewShopRating.getLayoutParams();
-
-//        shopNamePaddingLeft = textViewShopName.getPaddingLeft();
-//        shopNamePaddingTop = textViewShopName.getPaddingTop();
-//        shopNameText = textViewShopName.getText().toString();
-
-//        shopAddressPaddingLeft = textViewShopAddress.getPaddingLeft();
-//        shopAddressPaddingTop = textViewShopAddress.getPaddingTop();
-//        shopAddressText = textViewShopAddress.getText().toString();
-
-//        shopCategoryPaddingLeft = textViewShopCategory.getPaddingLeft();
-//        shopCategoryPaddingTop = textViewShopCategory.getPaddingTop();
-//        shopCategoryText = textViewShopCategory.getText().toString();
-
-//        shopRatingPaddingLeft = textViewShopRating.getPaddingLeft();
-//        shopRatingPaddingTop = textViewShopRating.getPaddingTop();
-//        shopRatingText = textViewShopRating.getText().toString();
-
-//        cardRadius = cardView.getRadius();
-//        shopNameTextSize = textViewShopName.getTextSize();
-//        shopAddressTextSize = textViewShopAddress.getTextSize();
-//        shopCategoryTextSize = textViewShopCategory.getTextSize();
-//        shopRatingTextSize = textViewShopRating.getTextSize();
+////        textViewShopRating7 = findViewById(R.id.cardViewShopRating7);
 
 //  FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -182,7 +154,7 @@ public class BuyerSearch extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        dialog = ProgressDialog.show(this, "", "Loading Results...", true);
+        dialog = ProgressDialog.show(this, "", "Loading Results ...", true);
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference userReference = mDatabaseReference.child("users").child("sellers");
         userReference
@@ -207,6 +179,7 @@ public class BuyerSearch extends AppCompatActivity
                                 shop_bid = snapshot.child("bidPrice").getValue().toString();
                                 bid = Integer.parseInt(shop_bid);
                                 String shop_cat = shop_category.replaceAll("[\\[\\]\\(\\)]", "");
+                                allShopsList.add(shop_name);
                                 for(int j = 0; j < selectedCategoryList.size(); j++) {
                                     if (shop_cat.contains(selectedCategoryList.get(j).toString())) {
                                         categoryMap.put(shop_name, shop_cat);
@@ -236,7 +209,7 @@ public class BuyerSearch extends AppCompatActivity
                                         textViewShopName.setText(bidMap.get(bid).toString());
                                         textViewShopAddress.setText(addressMap.get(textViewShopName.getText().toString()));
                                         textViewShopCategory.setText(categoryMap.get(textViewShopName.getText().toString()));
-                                        textViewShopRating.setText("0.0");
+//                                        textViewShopRating.setText("0.0");
                                         if (dialog != null && dialog.isShowing())
                                             dialog.dismiss();
                                         break;
@@ -246,13 +219,13 @@ public class BuyerSearch extends AppCompatActivity
                                         textViewShopName.setText(bidMap.get(bid).toString());
                                         textViewShopAddress.setText(addressMap.get(textViewShopName.getText().toString()));
                                         textViewShopCategory.setText(categoryMap.get(textViewShopName.getText().toString()));
-                                        textViewShopRating.setText("0.0");
+//                                        textViewShopRating.setText("0.0");
 
                                         cardView1.setVisibility(View.VISIBLE);
                                         textViewShopName1.setText(shopList.get(0).toString());
                                         textViewShopAddress1.setText(shopAddressList.get(0).toString());
                                         textViewShopCategory1.setText(shopCategory.get(0).toString());
-                                        textViewShopRating1.setText("0.0");
+//                                        textViewShopRating1.setText("0.0");
                                         if (dialog != null && dialog.isShowing())
                                             dialog.dismiss();
                                         break;
@@ -262,19 +235,19 @@ public class BuyerSearch extends AppCompatActivity
                                         textViewShopName.setText(bidMap.get(bid).toString());
                                         textViewShopAddress.setText(addressMap.get(textViewShopName.getText().toString()));
                                         textViewShopCategory.setText(categoryMap.get(textViewShopName.getText().toString()));
-                                        textViewShopRating.setText("0.0");
+//                                        textViewShopRating.setText("0.0");
 
                                         cardView1.setVisibility(View.VISIBLE);
                                         textViewShopName1.setText(shopList.get(0).toString());
                                         textViewShopAddress1.setText(shopAddressList.get(0).toString());
                                         textViewShopCategory1.setText(shopCategory.get(0).toString());
-                                        textViewShopRating1.setText("0.0");
+//                                        textViewShopRating1.setText("0.0");
 
                                         cardView2.setVisibility(View.VISIBLE);
                                         textViewShopName2.setText(shopList.get(1).toString());
                                         textViewShopAddress2.setText(shopAddressList.get(1).toString());
                                         textViewShopCategory2.setText(shopCategory.get(1).toString());
-                                        textViewShopRating2.setText("0.0");
+//                                        textViewShopRating2.setText("0.0");
                                         if (dialog != null && dialog.isShowing())
                                             dialog.dismiss();
                                         break;
@@ -284,25 +257,25 @@ public class BuyerSearch extends AppCompatActivity
                                         textViewShopName.setText(bidMap.get(bid).toString());
                                         textViewShopAddress.setText(addressMap.get(textViewShopName.getText().toString()));
                                         textViewShopCategory.setText(categoryMap.get(textViewShopName.getText().toString()));
-                                        textViewShopRating.setText("0.0");
+//                                        textViewShopRating.setText("0.0");
 
                                         cardView1.setVisibility(View.VISIBLE);
                                         textViewShopName1.setText(shopList.get(0).toString());
                                         textViewShopAddress1.setText(shopAddressList.get(0).toString());
                                         textViewShopCategory1.setText(shopCategory.get(0).toString());
-                                        textViewShopRating1.setText("0.0");
+//                                        textViewShopRating1.setText("0.0");
 
                                         cardView2.setVisibility(View.VISIBLE);
                                         textViewShopName2.setText(shopList.get(1).toString());
                                         textViewShopAddress2.setText(shopAddressList.get(1).toString());
                                         textViewShopCategory2.setText(shopCategory.get(1).toString());
-                                        textViewShopRating2.setText("0.0");
+//                                        textViewShopRating2.setText("0.0");
 
                                         cardView3.setVisibility(View.VISIBLE);
                                         textViewShopName3.setText(shopList.get(2).toString());
                                         textViewShopAddress3.setText(shopAddressList.get(2).toString());
                                         textViewShopCategory3.setText(shopCategory.get(2).toString());
-                                        textViewShopRating3.setText("0.0");
+//                                        textViewShopRating3.setText("0.0");
                                         if (dialog != null && dialog.isShowing())
                                             dialog.dismiss();
                                         break;
@@ -312,31 +285,31 @@ public class BuyerSearch extends AppCompatActivity
                                         textViewShopName.setText(bidMap.get(bid).toString());
                                         textViewShopAddress.setText(addressMap.get(textViewShopName.getText().toString()));
                                         textViewShopCategory.setText(categoryMap.get(textViewShopName.getText().toString()));
-                                        textViewShopRating.setText("0.0");
+//                                        textViewShopRating.setText("0.0");
 
                                         cardView1.setVisibility(View.VISIBLE);
                                         textViewShopName1.setText(shopList.get(0).toString());
                                         textViewShopAddress1.setText(shopAddressList.get(0).toString());
                                         textViewShopCategory1.setText(shopCategory.get(0).toString());
-                                        textViewShopRating1.setText("0.0");
+//                                        textViewShopRating1.setText("0.0");
 
                                         cardView2.setVisibility(View.VISIBLE);
                                         textViewShopName2.setText(shopList.get(1).toString());
                                         textViewShopAddress2.setText(shopAddressList.get(1).toString());
                                         textViewShopCategory2.setText(shopCategory.get(1).toString());
-                                        textViewShopRating2.setText("0.0");
+//                                        textViewShopRating2.setText("0.0");
 
                                         cardView3.setVisibility(View.VISIBLE);
                                         textViewShopName3.setText(shopList.get(2).toString());
                                         textViewShopAddress3.setText(shopAddressList.get(2).toString());
                                         textViewShopCategory3.setText(shopCategory.get(2).toString());
-                                        textViewShopRating3.setText("0.0");
+//                                        textViewShopRating3.setText("0.0");
 
                                         cardView4.setVisibility(View.VISIBLE);
                                         textViewShopName4.setText(shopList.get(3).toString());
                                         textViewShopAddress4.setText(shopAddressList.get(3).toString());
                                         textViewShopCategory4.setText(shopCategory.get(3).toString());
-                                        textViewShopRating4.setText("0.0");
+//                                        textViewShopRating4.setText("0.0");
                                         if (dialog != null && dialog.isShowing())
                                             dialog.dismiss();
                                         break;
@@ -352,6 +325,78 @@ public class BuyerSearch extends AppCompatActivity
                         return;
                     }
                 });
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShopDetails.class);
+                intent.putExtra("shopName", textViewShopName.getText().toString());
+                intent.putExtra("shopCategory", textViewShopCategory.getText().toString());
+                intent.putExtra("shopAddress", textViewShopAddress.getText().toString());
+                intent.putParcelableArrayListExtra("allShops", allShopsList);
+                startActivity(intent);
+            }
+        });
+
+        cardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShopDetails.class);
+                intent.putExtra("shopName", textViewShopName1.getText().toString());
+                intent.putExtra("shopCategory", textViewShopCategory1.getText().toString());
+                intent.putExtra("shopAddress", textViewShopAddress1.getText().toString());
+                intent.putParcelableArrayListExtra("allShops", allShopsList);
+                startActivity(intent);
+            }
+        });
+
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShopDetails.class);
+                intent.putExtra("shopName", textViewShopName2.getText().toString());
+                intent.putExtra("shopCategory", textViewShopCategory2.getText().toString());
+                intent.putExtra("shopAddress", textViewShopAddress2.getText().toString());
+                intent.putParcelableArrayListExtra("allShops", allShopsList);
+                startActivity(intent);
+            }
+        });
+
+        cardView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShopDetails.class);
+                intent.putExtra("shopName", textViewShopName3.getText().toString());
+                intent.putExtra("shopCategory", textViewShopCategory3.getText().toString());
+                intent.putExtra("shopAddress", textViewShopAddress3.getText().toString());
+                intent.putParcelableArrayListExtra("allShops", allShopsList);
+                startActivity(intent);
+            }
+        });
+
+        cardView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShopDetails.class);
+                intent.putExtra("shopName", textViewShopName4.getText().toString());
+                intent.putExtra("shopCategory", textViewShopCategory4.getText().toString());
+                intent.putExtra("shopAddress", textViewShopAddress4.getText().toString());
+                intent.putParcelableArrayListExtra("allShops", allShopsList);
+                startActivity(intent);
+            }
+        });
+
+        cardView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShopDetails.class);
+                intent.putExtra("shopName", textViewShopName5.getText().toString());
+                intent.putExtra("shopCategory", textViewShopCategory5.getText().toString());
+                intent.putExtra("shopAddress", textViewShopAddress5.getText().toString());
+                intent.putParcelableArrayListExtra("allShops", allShopsList);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -361,6 +406,7 @@ public class BuyerSearch extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
 //            super.onBackPressed();
+            finish();
             Intent intent = new Intent(getApplicationContext(), BuyerDashboard.class);
             startActivity(intent);
         }
@@ -397,11 +443,13 @@ public class BuyerSearch extends AppCompatActivity
         if (id == R.id.nav_account) {
             // Handle the camera action
         }
-        else if (id == R.id.nav_faq) {
-
+        else if (id == R.id.nav_feedback) {
+            Intent intent = new Intent(getApplicationContext(), SendFeedback.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_contact) {
-
+            Intent intent = new Intent(getApplicationContext(), ContactUs.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_rate) {
 

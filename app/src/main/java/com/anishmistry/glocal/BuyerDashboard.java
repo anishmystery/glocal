@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.robertlevonyan.views.chip.Chip;
+import com.robertlevonyan.views.chip.OnCloseClickListener;
 import com.robertlevonyan.views.chip.OnSelectClickListener;
 
 import java.util.ArrayList;
@@ -38,6 +39,13 @@ public class BuyerDashboard extends AppCompatActivity {
             @Override
             public void onSelectClick(View v, boolean selected) {
                 selectedChips.add(chipAppliances.getChipText().toString());
+            }
+        });
+
+        chipAppliances.setOnCloseClickListener(new OnCloseClickListener() {
+            @Override
+            public void onCloseClick(View v) {
+                selectedChips.remove("Appliances");
             }
         });
 

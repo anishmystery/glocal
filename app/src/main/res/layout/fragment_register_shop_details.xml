@@ -22,22 +22,46 @@
             android:textSize="18sp"
             android:layout_below="@+id/title"/>
 
+        <TextView
+            android:id="@+id/shopNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/constraintLayout"
+            android:layout_marginTop="30dp"
+            android:text="@string/shopName"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
         <EditText
             android:id="@+id/shopName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/constraintLayout"
-            android:layout_marginTop="30dp"
+            android:layout_below="@id/shopNameTitle"
+            android:layout_marginTop="5dp"
             android:inputType="text"
             android:fontFamily="@font/quicksand"
             android:hint="@string/shopName"/>
+
+        <TextView
+            android:id="@+id/shopLocationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopName"
+            android:layout_marginTop="20dp"
+            android:text="@string/shopLocation"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
         <EditText
             android:id="@+id/shopLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/shopName"
-            android:layout_marginTop="20dp"
+            android:layout_below="@id/shopLocationTitle"
+            android:layout_marginTop="5dp"
             android:inputType="text"
             android:fontFamily="@font/quicksand"
             android:hint="@string/shopLocation" />
@@ -60,12 +84,24 @@
                 android:layout_height="wrap_content" />
         </android.support.constraint.ConstraintLayout>
 
+        <TextView
+            android:id="@+id/bidPriceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopLocation"
+            android:layout_marginTop="20dp"
+            android:text="@string/bidPrice"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
         <EditText
             android:id="@+id/bidPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/shopLocation"
-            android:layout_marginTop="20dp"
+            android:layout_below="@id/bidPriceTitle"
+            android:layout_marginTop="5dp"
             android:inputType="number"
             android:fontFamily="@font/quicksand"
             android:hint="@string/bidPrice" />

@@ -1,6 +1,7 @@
 package com.anishmistry.glocal;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,12 @@ public class Signup extends AppCompatActivity {
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
             fragment = new RegisterSellerDetails();
             fragmentTransaction.replace(R.id.container, fragment);
-            fragmentTransaction.addToBackStack(null);
+            getFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+                @Override
+                public void onBackStackChanged() {
+                    if(getFragmentManager().getBackStackEntryCount() == 0) finish();
+                }
+            });
             fragmentTransaction.commit();
         }
         else {
@@ -38,7 +44,12 @@ public class Signup extends AppCompatActivity {
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
             fragment = new RegisterBuyerDetails();
             fragmentTransaction.replace(R.id.container, fragment);
-            fragmentTransaction.addToBackStack(null);
+            getFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+                @Override
+                public void onBackStackChanged() {
+                    if(getFragmentManager().getBackStackEntryCount() == 0) finish();
+                }
+            });
             fragmentTransaction.commit();
         }
 //        editTextSellerPhone = (EditText)findViewById(R.id.buyerPhone);

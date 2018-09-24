@@ -9,7 +9,7 @@
         <item
             android:id="@+id/nav_account"
             android:icon="@drawable/ic_outline_account_circle_24px"
-            android:title="Account" />
+            android:title="@string/account" />
         <!--<item-->
             <!--android:id="@+id/nav_reviews"-->
             <!--android:icon="@drawable/ic_review"-->
@@ -28,20 +28,20 @@
         android:id="@+id/menu_middle"
         android:checkableBehavior="single">
         <item
-            android:title="Need Help?">
+            android:title="@string/help">
             <menu>
                 <item
-                    android:id="@+id/nav_faq"
-                    android:icon="@drawable/ic_information"
-                    android:title="FAQs" />
+                    android:id="@+id/nav_feedback"
+                    android:icon="@drawable/ic_outline_send_24px"
+                    android:title="@string/feedback" />
                 <item
                     android:id="@+id/nav_contact"
                     android:icon="@drawable/ic_outline_phone_24px"
-                    android:title="Contact Us" />
+                    android:title="@string/contact" />
                 <item
                     android:id="@+id/nav_rate"
-                    android:icon="@drawable/ic_outline_star_rate_18px"
-                    android:title="Rate Us" />
+                    android:icon="@drawable/ic_outline_star_border_24px"
+                    android:title="@string/rate" />
                 <!--<item-->
                     <!--android:id="@+id/nav_about"-->
                     <!--android:icon="@drawable/ic_menu_send"-->
@@ -60,6 +60,6 @@
         <item
             android:id="@+id/nav_signout"
             android:icon="@drawable/ic_outline_exit_to_app_24px"
-            android:title="Sign Out" />
+            android:title="@string/signOut" />
     </group>
 </menu>

@@ -20,7 +20,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDXsSLViLDZToHk-9JasDtsc5J5D3gRRos" />
 
-        <activity android:name=".BuyerDashboard">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,13 +31,16 @@
         <activity android:name=".OTPAuth" />
         <activity android:name=".OnBoarding" />
         <activity android:name=".SellerDashboard" />
-        <activity android:name=".Login" />
+        <activity android:name=".BuyerDashboard" />
         <activity
             android:name=".BuyerSearch"
             android:label="@string/title_activity_buyer_search"
             android:theme="@style/AppTheme" />
         <activity android:name=".Page404" />
-        <activity android:name=".ShopDetails"></activity>
+        <activity android:name=".ShopDetails" />
+        <activity android:name=".AddReview" />
+        <activity android:name=".SendFeedback" />
+        <activity android:name=".ContactUs"></activity>
     </application>
 
 </manifest>
